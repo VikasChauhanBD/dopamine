@@ -3,29 +3,34 @@ import * as THREE from "three";
 import "./SpiralGallery.css";
 
 const imageUrls = [
-  "https://images.unsplash.com/photo-1638959882708-9503b1cd595f?w=800&q=80",
-  "https://images.unsplash.com/photo-1644469709847-454ef12d5144?w=800&q=80",
-  "https://images.unsplash.com/photo-1731848356615-90cba9fdc862?w=800&q=80",
-  "https://images.unsplash.com/photo-1688388040015-c3985c83a12d?w=800&q=80",
-  "https://images.unsplash.com/photo-1726591383648-5b5cbe1da1a2?w=800&q=80",
-  "https://images.unsplash.com/photo-1651745314014-a9432659af40?w=800&q=80",
-  "https://images.unsplash.com/photo-1635585244467-134d68caad51?w=800&q=80",
-  "https://images.unsplash.com/photo-1517498327491-f903e1e281cd?w=800&q=80",
-  "https://images.unsplash.com/photo-1584969405346-5230ae2bc4fc?w=800&q=80",
-  "https://images.unsplash.com/photo-1615212049275-95561aebe1b4?w=800&q=80",
-  "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=800&q=80",
-  "https://images.unsplash.com/photo-1516727003284-a96541e51e9c?w=800&q=80",
-  "https://images.unsplash.com/photo-1530735038726-a73fd6e6a349?w=800&q=80",
-  "https://images.unsplash.com/photo-1548918901-9b31223c5c3a?w=800&q=80",
-  "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80",
-  "https://images.unsplash.com/photo-1553544260-f87e671974ee?w=800&q=80",
-  "https://images.unsplash.com/photo-1512084747998-038941f49b84?w=800&q=80",
-  "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80",
-  "https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=800&q=80",
-  "https://images.unsplash.com/photo-1532170579297-281918c8ae72?w=800&q=80",
-  "https://images.unsplash.com/photo-1536924430914-91f9e2041b83?w=800&q=80",
-  "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=800&q=80",
-  "https://images.unsplash.com/photo-1593010932917-92bd21088dee?w=800&q=80",
+  "https://cdn.dribbble.com/userupload/46295939/file/5013c77efa5456948a4b5546983f2732.jpg",
+  "https://cdn.dribbble.com/userupload/46295954/file/eea8cece4c477ec644b59b7f9a62fa67.jpg",
+  "https://cdn.dribbble.com/userupload/46295960/file/c5b0712312abada93710c0960251dedb.webp",
+  "https://cdn.dribbble.com/userupload/46295962/file/3f356f62229b14733e4bee0c87aef9c2.webp",
+  "https://cdn.dribbble.com/userupload/46295946/file/41cbf303747e7b5d2775a8d6b903b2a6.jpg",
+  "https://cdn.dribbble.com/userupload/46295940/file/128e0aa6df05f7843a65825f28658659.jpg",
+  "https://cdn.dribbble.com/userupload/46295956/file/29e0fc4aa975b197b9c4e59f5d15df76.jpg",
+  "https://cdn.dribbble.com/userupload/46295927/file/b03d6d47ffa301f20e861d106438b9a9.jpg",
+  "https://cdn.dribbble.com/userupload/46295934/file/e3bdd683af8c5839367f9ed5ec37159e.jpg",
+  "https://cdn.dribbble.com/userupload/46295936/file/08db33f045651fd864eab87caf4fc21f.jpg",
+  "https://cdn.dribbble.com/userupload/46295931/file/89ff377208f1906548c1c0229d347cae.jpg",
+  "https://cdn.dribbble.com/userupload/46295926/file/2eb6291684173fb51a2774f3d05f3543.jpg",
+  "https://cdn.dribbble.com/userupload/46297331/file/58b365b0b0f4462374cc7951067017bc.jpg",
+  "https://cdn.dribbble.com/userupload/46295928/file/1304e421fb879feb83e6c0ff616ba640.jpg",
+  "https://cdn.dribbble.com/userupload/46295939/file/5013c77efa5456948a4b5546983f2732.jpg",
+  "https://cdn.dribbble.com/userupload/46295954/file/eea8cece4c477ec644b59b7f9a62fa67.jpg",
+  "https://cdn.dribbble.com/userupload/46295960/file/c5b0712312abada93710c0960251dedb.webp",
+  "https://cdn.dribbble.com/userupload/46295962/file/3f356f62229b14733e4bee0c87aef9c2.webp",
+  "https://cdn.dribbble.com/userupload/46295946/file/41cbf303747e7b5d2775a8d6b903b2a6.jpg",
+  "https://cdn.dribbble.com/userupload/46295940/file/128e0aa6df05f7843a65825f28658659.jpg",
+  "https://cdn.dribbble.com/userupload/46295956/file/29e0fc4aa975b197b9c4e59f5d15df76.jpg",
+  "https://cdn.dribbble.com/userupload/46295927/file/b03d6d47ffa301f20e861d106438b9a9.jpg",
+  "https://cdn.dribbble.com/userupload/46295934/file/e3bdd683af8c5839367f9ed5ec37159e.jpg",
+  "https://cdn.dribbble.com/userupload/46295936/file/08db33f045651fd864eab87caf4fc21f.jpg",
+  "https://cdn.dribbble.com/userupload/46295931/file/89ff377208f1906548c1c0229d347cae.jpg",
+  "https://cdn.dribbble.com/userupload/46295926/file/2eb6291684173fb51a2774f3d05f3543.jpg",
+  "https://cdn.dribbble.com/userupload/46297331/file/58b365b0b0f4462374cc7951067017bc.jpg",
+  "https://cdn.dribbble.com/userupload/46295928/file/1304e421fb879feb83e6c0ff616ba640.jpg",
 ];
 
 const FULLSCREEN_ICONS = {
@@ -623,12 +628,14 @@ const SpiralGallery = () => {
       </div>
 
       <div className="spiral-content">
-        <h2 className="spiral-heading">Infinite Gallery</h2>
+        <h2 className="spiral-heading">Felicitation Ceremony 2025</h2>
         <p className="spiral-description">
-          An endless spiral of images that you can scroll, drag and explore.
-          Every frame flows into the next, creating a continuous loop of
-          visuals. Move through the collection at your own pace and discover
-          something new with every turn.
+          A celebration of dedication, perseverance, and success. Join us as we
+          honour the remarkable achievements of NEET PG, INI-CET & FMGE
+          aspirants who turned their dreams into reality through relentless
+          effort and determination. This is more than a felicitation - it is a
+          celebration of the journey, the hard work, and the milestones that
+          made their success possible.
         </p>
       </div>
 

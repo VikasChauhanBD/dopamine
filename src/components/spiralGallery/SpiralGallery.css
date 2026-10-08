@@ -3,7 +3,7 @@
 .spiral-gallery {
   position: relative;
   z-index: 0;
-  isolation: isolate; /* keeps inner z-index values from overlapping other sections */
+  isolation: isolate;
   width: 100%;
   height: 100vh;
   background: black;
@@ -19,7 +19,7 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  touch-action: pan-y; /* vertical swipes still scroll the page */
+  touch-action: pan-y;
 }
 
 .spiral-webgl-canvas {
@@ -32,17 +32,16 @@
   outline: none;
 }
 
-/* Right-side text */
 .spiral-content {
   position: absolute;
   top: 50%;
   right: 5%;
   transform: translateY(-50%);
   width: 100%;
-  max-width: 380px;
+  max-width: 480px;
   z-index: 2;
   text-align: right;
-  pointer-events: none; /* drag/scroll passes through to the spiral */
+  pointer-events: none;
 }
 
 .spiral-heading {
@@ -52,14 +51,14 @@
   font-size: clamp(2rem, 4vw, 3.25rem);
   line-height: 1.1;
   text-transform: uppercase;
-  color: #fff;
+  color: #f28705;
 }
 
 .spiral-description {
   margin: 0;
   font-size: 1rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
 }
 
 @media (max-width: 768px) {
@@ -76,7 +75,6 @@
   }
 }
 
-/* Fullscreen toggle button */
 .spiral-fullscreen-btn {
   all: unset;
   position: absolute;
