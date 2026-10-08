@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap");
 
 .ss-section {
   position: relative;
@@ -18,81 +18,177 @@
 }
 
 .ss-reset {
-  position: absolute; top: 18px; left: 18px;
-  background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.06);
-  color: rgba(0,0,0,0.32); font: 400 11px 'DM Mono', monospace;
-  padding: 5px 14px; border-radius: 6px;
-  cursor: pointer; transition: all .2s; letter-spacing: 0.02em;
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.32);
+  font:
+    400 11px "DM Mono",
+    monospace;
+  padding: 5px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
 }
-.ss-reset:hover { background: rgba(0,0,0,0.08); color: rgba(0,0,0,0.5); }
-
-.ss-link {
-  position: absolute; bottom: 12px; right: 16px;
-  color: rgba(0,0,0,0.12); font: 400 9px 'DM Mono', monospace;
-  text-decoration: none; transition: color .2s; letter-spacing: 0.03em;
+.ss-reset:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.5);
 }
-.ss-link:hover { color: rgba(0,0,0,0.3); }
 
 .ss-panel {
-  position: absolute; top: 14px; right: 14px;
+  position: absolute;
+  top: 14px;
+  right: 14px;
   width: 200px;
 }
 
 .ss-toggle {
-  width: 100%; padding: 8px 14px;
-  background: rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.06);
-  color: rgba(0,0,0,0.4); font: 500 11px 'DM Mono', monospace;
-  border-radius: 8px; cursor: pointer;
-  transition: all .2s; text-align: left; letter-spacing: 0.03em;
+  width: 100%;
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.4);
+  font:
+    500 11px "DM Mono",
+    monospace;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  letter-spacing: 0.03em;
 }
-.ss-toggle:hover { background: rgba(0,0,0,0.08); color: rgba(0,0,0,0.55); }
-.ss-toggle.ss-active { border-radius: 8px 8px 0 0; border-bottom-color: transparent; }
+.ss-toggle:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.55);
+}
+.ss-toggle.ss-active {
+  border-radius: 8px 8px 0 0;
+  border-bottom-color: transparent;
+}
 
 .ss-controls {
-  background: rgba(255,255,255,0.88);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0,0,0,0.06); border-top: none;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-top: none;
   border-radius: 0 0 8px 8px;
-  max-height: 0; overflow: hidden; opacity: 0;
-  transition: max-height .3s ease, opacity .25s ease, padding .3s ease;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.25s ease,
+    padding 0.3s ease;
   padding: 0 16px;
 }
-.ss-controls.ss-open { max-height: 320px; opacity: 1; padding: 14px 16px 18px; }
+.ss-controls.ss-open {
+  max-height: 320px;
+  opacity: 1;
+  padding: 14px 16px 18px;
+}
 
 .ss-label {
-  display: flex; flex-direction: column; gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   margin-bottom: 14px;
 }
-.ss-label:last-child { margin-bottom: 0; }
+.ss-label:last-child {
+  margin-bottom: 0;
+}
 
 .ss-label-text {
-  font: 400 10px 'DM Mono', monospace;
-  color: rgba(0,0,0,0.35); letter-spacing: 0.05em;
+  font:
+    400 10px "DM Mono",
+    monospace;
+  color: rgba(0, 0, 0, 0.35);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .ss-range {
-  -webkit-appearance: none; appearance: none;
-  width: 100%; height: 4px;
-  background: rgba(0,0,0,0.07); border-radius: 2px;
-  outline: none; cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.07);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
 }
 .ss-range::-webkit-slider-thumb {
-  -webkit-appearance: none; appearance: none;
-  width: 14px; height: 14px; border-radius: 50%;
-  background: #fff; border: 1.5px solid rgba(0,0,0,0.18);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  transition: border-color .15s, box-shadow .15s;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s;
 }
 .ss-range::-webkit-slider-thumb:hover {
-  border-color: rgba(0,0,0,0.3);
-  box-shadow: 0 1px 6px rgba(0,0,0,0.15);
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
 }
 .ss-range::-moz-range-thumb {
-  width: 14px; height: 14px; border-radius: 50%;
-  background: #fff; border: 1.5px solid rgba(0,0,0,0.18);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
 }
 .ss-range::-moz-range-track {
-  height: 4px; background: rgba(0,0,0,0.07); border-radius: 2px; border: none;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.07);
+  border-radius: 2px;
+  border: none;
+}
+
+.ss-name-box {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  max-width: calc(100% - 32px);
+  cursor: default;
+}
+
+.ss-name-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  color: rgba(0, 0, 0, 0.7);
+  font:
+    400 13px "DM Mono",
+    monospace;
+  letter-spacing: 0.03em;
+  text-align: center;
+  outline: none;
+  cursor: text;
+  user-select: text;
+  -webkit-user-select: text;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.ss-name-input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.ss-name-input:focus {
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
 }

@@ -1,0 +1,83 @@
+.about-section-main {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.about-section-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://cdn.dribbble.com/userupload/46295951/file/0d7ff40fa53d1488fb23e4608470ce49.jpg");
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.about-section-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+}
+
+.about-section-content {
+  position: relative;
+  z-index: 2;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ffffff;
+}
+
+.about-section-heading {
+  margin: 0;
+  font-size: clamp(50px, 8vw, 120px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.about-section-para {
+  max-width: 900px;
+  margin: 40px auto 0;
+  font-size: clamp(18px, 1.5vw, 24px);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ---------------- Responsive ---------------- */
+
+@media (max-width: 900px) {
+  .about-section-main {
+    min-height: 100svh;
+  }
+
+  .about-section-bg {
+    height: 100svh;
+    background-position: center bottom;
+  }
+
+  .about-section-content {
+    width: 88%;
+  }
+
+  .about-section-heading {
+    font-size: clamp(42px, 11vw, 70px);
+  }
+
+  .about-section-para {
+    margin-top: 25px;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+}
