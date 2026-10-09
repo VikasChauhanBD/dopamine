@@ -260,30 +260,76 @@ export default function SillyString() {
       my = clientY - r.top;
     };
 
+    // Touch handling: a quick swipe scrolls the page normally.
+    // Spray starts only after the finger is held still for HOLD_MS.
+    const HOLD_MS = 250;
+    const MOVE_TOL = 10;
+    let touchTimer = 0;
+    let touchDrawing = false;
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let lastTouchTime = 0;
+
+    const clearTouchTimer = () => {
+      if (touchTimer) {
+        clearTimeout(touchTimer);
+        touchTimer = 0;
+      }
+    };
+    const isEmulatedMouse = () => Date.now() - lastTouchTime < 800;
+
     const onMouseDown = (e) => {
+      if (isEmulatedMouse()) return;
       if (inIgnored(e.target)) return;
       setPos(e.clientX, e.clientY);
       startStrand();
     };
     const onMouseUp = () => {
+      if (isEmulatedMouse()) return;
       spraying = false;
       cur = null;
     };
     const onMouseMove = (e) => {
+      if (isEmulatedMouse()) return;
       setPos(e.clientX, e.clientY);
     };
     const onTouchStart = (e) => {
+      lastTouchTime = Date.now();
       if (inIgnored(e.target)) return;
-      e.preventDefault();
-      setPos(e.touches[0].clientX, e.touches[0].clientY);
-      startStrand();
+      if (e.touches.length > 1) {
+        clearTouchTimer();
+        return;
+      }
+      const t = e.touches[0];
+      touchStartX = t.clientX;
+      touchStartY = t.clientY;
+      setPos(t.clientX, t.clientY);
+      clearTouchTimer();
+      touchTimer = setTimeout(() => {
+        touchTimer = 0;
+        touchDrawing = true;
+        startStrand();
+      }, HOLD_MS);
     };
     const onTouchMove = (e) => {
+      lastTouchTime = Date.now();
       if (inIgnored(e.target)) return;
-      e.preventDefault();
-      setPos(e.touches[0].clientX, e.touches[0].clientY);
+      const t = e.touches[0];
+      if (touchDrawing) {
+        if (e.cancelable) e.preventDefault();
+        setPos(t.clientX, t.clientY);
+        return;
+      }
+      const dx = t.clientX - touchStartX;
+      const dy = t.clientY - touchStartY;
+      if (dx * dx + dy * dy > MOVE_TOL * MOVE_TOL) {
+        clearTouchTimer();
+      }
     };
     const onTouchEnd = () => {
+      lastTouchTime = Date.now();
+      clearTouchTimer();
+      touchDrawing = false;
       spraying = false;
       cur = null;
     };
@@ -291,9 +337,10 @@ export default function SillyString() {
     section.addEventListener("mousedown", onMouseDown);
     section.addEventListener("mousemove", onMouseMove);
     window.addEventListener("mouseup", onMouseUp);
-    section.addEventListener("touchstart", onTouchStart, { passive: false });
+    section.addEventListener("touchstart", onTouchStart, { passive: true });
     section.addEventListener("touchmove", onTouchMove, { passive: false });
     window.addEventListener("touchend", onTouchEnd);
+    window.addEventListener("touchcancel", onTouchEnd);
 
     const CW = 18,
       CH = 46,
@@ -493,6 +540,7 @@ export default function SillyString() {
     return () => {
       alive = false;
       cancelAnimationFrame(rafId);
+      clearTouchTimer();
       ro.disconnect();
       section.removeEventListener("mousedown", onMouseDown);
       section.removeEventListener("mousemove", onMouseMove);
@@ -500,6 +548,7 @@ export default function SillyString() {
       section.removeEventListener("touchstart", onTouchStart);
       section.removeEventListener("touchmove", onTouchMove);
       window.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("touchcancel", onTouchEnd);
     };
   }, []);
 
