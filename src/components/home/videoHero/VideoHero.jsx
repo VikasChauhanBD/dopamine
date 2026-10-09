@@ -85,7 +85,11 @@ function VideoHero() {
         <p className="hero-para">
           A Felicitation Ceremony for
           <br />
-          NEET PG . INI-CET . FMGE June 2026 Achievers
+          NEET PG . INI-CET . FMGE 2026 Achievers
+        </p>
+
+        <p className="hero-tag">
+          “Kahani tumhari thi… or tumne kiya kamaal likhna.”
         </p>
       </div>
     </section>

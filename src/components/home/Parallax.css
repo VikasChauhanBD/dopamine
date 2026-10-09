@@ -1,0 +1,42 @@
+.home-page {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  overflow: clip;
+  background: #000000;
+}
+
+.home-page__background {
+  position: absolute;
+  inset: 0 0 auto 0;
+  width: 90%;
+  margin: auto;
+  height: 120%;
+  z-index: -1;
+  pointer-events: none;
+
+  background-image: url("https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/sites/126/2025/03/21214514/unity_2025_mk_misc_website_backgrounds_1920x1080_r02v05-dark2-scaled.jpg");
+
+  background-position: center top;
+  background-size: contain;
+
+  will-change: transform;
+}
+
+.home-page__content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Keep sections transparent to reveal the shared background */
+.home-page__content > section {
+  background-color: transparent;
+}
+
+/* -------------------------------- Responsive Styles ------------------------------ */
+
+@media (max-width: 900px) {
+  .home-page__background {
+    width: 100%;
+  }
+}

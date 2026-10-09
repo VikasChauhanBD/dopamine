@@ -1,22 +1,18 @@
 import React from "react";
-import VideoHero from "../components/videoHero/VideoHero";
-import Marquee from "../components/marquee/Marquee";
-import AboutSection from "../components/aboutSection/AboutSection";
-import Mentor from "../components/mentor/Mentor";
-import SpiralGallery from "../components/spiralGallery/SpiralGallery";
-import Registration from "../components/registration/Registration";
-import SillyString from "../components/sillyString/SillyString";
+import VideoHero from "../components/home/videoHero/VideoHero";
+import Marquee from "../components/home/marquee/Marquee";
+import Parallax from "../components/home/Parallax";
+import AboutSection from "../components/home/aboutSection/AboutSection";
+import SpiralGallery from "../components/home/spiralGallery/SpiralGallery";
+import Registration from "../components/home/registration/Registration";
+import SillyString from "../components/home/sillyString/SillyString";
 
 function HomePage() {
   return (
     <div>
       <VideoHero />
       <Marquee />
-      <AboutSection />
-      <Mentor />
-      <SpiralGallery />
-      <Registration />
-      <SillyString />
+      <Parallax />
     </div>
   );
 }

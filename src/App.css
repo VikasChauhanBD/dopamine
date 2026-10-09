@@ -2,4 +2,54 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Bootzy TM", sans-serif;
 }
+
+/* ---------- Website Palette ---------------- */
+
+/* Cool Black #021F59
+
+Medium Persian Blue #035AA6
+
+Tangerine #F28705
+
+Persimmon #F25C05
+
+heading {
+  margin: 0 0 30px;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.08;
+  text-transform: uppercase;
+}
+
+sub-heading {
+  margin: 0 0 30px;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+ para {
+    font-size: 18px;
+  }
+
+@media (max-width: 900px) {
+ heading {
+    font-size: 38px;
+  }
+
+   sub-heading {
+    font-size: 24px;
+  }
+
+ para {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  heading {
+    font-size: 32px;
+  }
+} */

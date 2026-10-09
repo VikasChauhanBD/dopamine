@@ -1,0 +1,96 @@
+.navbar-container {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #000000;
+}
+
+.navbar-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 50px;
+  color: #fff;
+}
+
+/* .navbar-section img {
+  width: 120px;
+} */
+
+.navbar-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-section p {
+  font-size: 28px;
+  font-weight: 800;
+  cursor: pointer;
+  margin: 0;
+}
+
+.navbar-content {
+  width: 30%;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  background-color: rgba(0, 0, 0, 0.362);
+  backdrop-filter: blur(40px);
+  padding: 100px 40px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.navbar-close {
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  border-radius: 50%;
+  padding: 5px;
+  font-size: 50px;
+  transition: transform 0.5s ease;
+}
+
+.navbar-close:hover {
+  cursor: pointer;
+  transform: rotate(180deg);
+}
+
+/* -------------------------------- Responsive Styles ------------------------------ */
+
+@media (max-width: 868px) {
+  .navbar-content {
+    width: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-content {
+    width: 100%;
+  }
+
+  .navbar-section {
+    padding: 16px 20px;
+  }
+
+  .navbar-section img {
+    width: 100px;
+  }
+
+  .navbar-close {
+    right: 80px;
+  }
+}
