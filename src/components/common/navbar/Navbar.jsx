@@ -60,15 +60,19 @@ function Navbar() {
           Home
         </NavLink>
 
-        <NavLink className="navbar-link" to="/#" onClick={closeNavbar}>
+        <NavLink
+          className="navbar-link"
+          to="/registration"
+          onClick={closeNavbar}
+        >
           Registration
         </NavLink>
 
-        <NavLink className="navbar-link" to="/#" onClick={closeNavbar}>
+        <NavLink className="navbar-link" to="/about" onClick={closeNavbar}>
           About
         </NavLink>
 
-        <NavLink className="navbar-link" to="/#" onClick={closeNavbar}>
+        <NavLink className="navbar-link" to="/contact" onClick={closeNavbar}>
           Contact Us
         </NavLink>
 

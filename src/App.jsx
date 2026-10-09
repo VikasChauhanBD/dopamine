@@ -4,7 +4,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/common/navbar/Navbar";
 import Footer from "./components/common/footer/Footer";
+
 import HomePage from "./pages/HomePage";
+import RegistrationPage from "./pages/RegistrationPage";
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/registration" element={<RegistrationPage />} />
       </Routes>
 
       <Footer />

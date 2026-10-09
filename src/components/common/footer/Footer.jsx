@@ -11,9 +11,9 @@ import "./Footer.css";
 const Footer = () => {
   const navLinks = [
     { name: "Home", href: "/", active: true },
-    { name: "Registration", href: "/#" },
-    { name: "About", href: "/#" },
-    { name: "Contact Us", href: "/#" },
+    { name: "Registration", href: "/registration" },
+    { name: "About", href: "/about" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   const socialLinks = [

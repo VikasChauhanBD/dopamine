@@ -9,7 +9,7 @@
 .home-page__background {
   position: absolute;
   inset: 0 0 auto 0;
-  width: 90%;
+  width: 100%;
   margin: auto;
   height: 120%;
   z-index: -1;
