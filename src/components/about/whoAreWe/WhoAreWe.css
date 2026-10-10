@@ -1,0 +1,161 @@
+.who-section {
+  width: 100%;
+  min-height: 674px;
+  background-color: #131418;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.who-inner {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 220px;
+}
+
+.who-badge {
+  position: relative;
+  width: 330px;
+  height: 330px;
+  flex-shrink: 0;
+}
+
+.who-badge-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: who-rotate 18s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+.who-badge-text {
+  fill: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.who-badge-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 62px;
+  height: 62px;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes who-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.who-content {
+  max-width: 670px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.who-title {
+  margin: 0 0 28px 0;
+  color: #ffffff;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.who-text {
+  margin: 0 0 48px 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.who-button {
+  width: 186px;
+  height: 55px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    transform 0.25s ease;
+
+  background-color: #f25c05;
+  box-shadow: #f28705 4px 5px 0px 0px;
+  color: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #f28705;
+}
+
+.who-button:hover {
+  box-shadow: #f25c05 0px 0px 0px 0px;
+}
+
+.who-button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+/* ------------------------------ Responsive --------------------------------- */
+
+@media (max-width: 900px) {
+  .who-section {
+    padding: 60px 24px;
+  }
+
+  .who-inner {
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  .who-content {
+    align-items: flex-start;
+  }
+
+  .who-title {
+    font-size: 38px;
+  }
+
+  .who-text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .who-badge {
+    width: 260px;
+    height: 260px;
+  }
+
+  .who-badge-arrow {
+    width: 50px;
+    height: 50px;
+  }
+
+  .who-title {
+    font-size: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .who-badge-ring {
+    animation: none;
+  }
+}

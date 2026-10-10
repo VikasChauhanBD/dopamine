@@ -89,7 +89,7 @@ function VideoHero() {
         </p>
 
         <p className="hero-tag">
-          “Kahani tumhari thi… or tumne kiya kamaal likhna.”
+          “Kahani tumhari thi… or tumne kiya kamaal likhi.”
         </p>
       </div>
     </section>
