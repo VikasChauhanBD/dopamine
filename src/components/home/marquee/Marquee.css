@@ -36,8 +36,8 @@
 
 .marquee-line img {
   display: block;
-  width: 100px;
-  height: 65px;
+  width: 150px;
+  height: 80px;
   object-fit: contain;
 }
 
@@ -49,8 +49,8 @@
   }
 
   .marquee-line img {
-    width: 75px;
-    height: 50px;
+    width: 100px;
+    height: 60px;
   }
 }
 
@@ -61,10 +61,5 @@
 
   .marquee-line {
     padding: 0 12px;
-  }
-
-  .marquee-line img {
-    width: 60px;
-    height: 40px;
   }
 }

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "./Marquee.css";
+import GRG from "../../../assets/grg.png";
 
 const logos = [
   {
@@ -16,8 +17,8 @@ const logos = [
     alt: "CoreBTR Logo",
   },
   {
-    src: "https://cdn.dribbble.com/userupload/49243456/file/6a33c9e10c12af9bd7e77302ab6f4c10.png",
-    alt: "Partner Logo",
+    src: GRG,
+    alt: "GRG Logo",
   },
 ];
 
