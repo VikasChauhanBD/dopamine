@@ -10,26 +10,16 @@
 .registration-header {
   position: relative;
   z-index: 2;
-  max-width: 800px;
   margin: 0 auto 70px;
   text-align: center;
 }
 
-.registration-header > span {
-  display: inline-block;
-  margin-bottom: 18px;
-  color: #f28705;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 3px;
-}
-
 .registration-header h2 {
-  margin: 0;
-  font-size: clamp(45px, 6vw, 80px);
-  line-height: 0.95;
-  letter-spacing: -3px;
+  margin: 0 0 30px;
+  font-size: 48px;
   font-weight: 600;
+  line-height: 1.08;
+  text-transform: uppercase;
 }
 
 .registration-header h2 strong {
@@ -38,10 +28,9 @@
 }
 
 .registration-header p {
-  max-width: 600px;
   margin: 25px auto 0;
   color: #ffffff;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.6;
 }
 
@@ -61,8 +50,6 @@
     0 30px 80px rgba(0, 0, 0, 0.5),
     0 0 50px rgba(2, 31, 89, 0.25);
 }
-
-/* MAIN TICKET */
 
 .ticket-main {
   position: relative;
@@ -89,8 +76,6 @@
 .ticket-main::after {
   right: -15px;
 }
-
-/* TOP */
 
 .ticket-top {
   display: flex;
@@ -134,7 +119,7 @@
 }
 
 .ticket-number span {
-  color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
   font-size: 9px;
   letter-spacing: 2px;
 }
@@ -143,8 +128,6 @@
   color: #f25c05;
   font-size: 28px;
 }
-
-/* DETAILS */
 
 .ticket-details {
   display: grid;
@@ -175,8 +158,8 @@
 .ticket-detail span {
   display: block;
   margin-bottom: 5px;
-  color: rgba(255, 255, 255, 0.45);
-  font-size: 9px;
+  color: #ffffff;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
 }
@@ -187,8 +170,6 @@
   font-size: 15px;
   font-weight: 500;
 }
-
-/* BOTTOM */
 
 .ticket-bottom {
   display: flex;
@@ -214,12 +195,12 @@
 
 .ticket-contact svg {
   color: #f25c05;
-  font-size: 13px;
+  font-size: 16px;
 }
 
 .ticket-contact span {
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 11px;
+  color: #ffffff;
+  font-size: 14px;
 }
 
 .ticket-button {
@@ -250,8 +231,6 @@
   transform: translateX(5px);
 }
 
-/* DIVIDER */
-
 .ticket-divider {
   position: relative;
   width: 2px;
@@ -263,8 +242,6 @@
     rgba(255, 255, 255, 0.5) 16px
   );
 }
-
-/* STUB */
 
 .ticket-stub {
   position: relative;
@@ -357,9 +334,22 @@
 
 /* -------------------------------- Responsive Styles ------------------------------ */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
+  .registration-section {
+    padding: 80px 16px;
+  }
+
+  .registration-header h2 {
+    font-family: 38px;
+  }
+
+  .registration-header p {
+    font-size: 16px;
+  }
+
   .ticket-wrapper {
     grid-template-columns: 1fr 2px 170px;
+    max-width: 600px;
   }
 
   .ticket-main {
@@ -377,24 +367,6 @@
   .ticket-bottom {
     align-items: flex-start;
     flex-direction: column;
-  }
-}
-
-@media (max-width: 700px) {
-  .registration-section {
-    padding: 80px 15px;
-  }
-
-  .registration-header {
-    margin-bottom: 45px;
-  }
-
-  .registration-header h2 {
-    font-size: 48px;
-  }
-
-  .registration-header p {
-    font-size: 15px;
   }
 
   .ticket-wrapper {
@@ -463,7 +435,7 @@
   .ticket-stub {
     min-height: 160px;
     padding: 25px;
-    flex-direction: row;
+    gap: 20px;
   }
 
   .ticket-stub::before,
@@ -501,7 +473,12 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
+  .registration-header h2 {
+    font-size: 32px;
+    line-height: 1.4;
+  }
+
   .ticket-main {
     padding: 25px 20px;
   }
@@ -512,17 +489,5 @@
 
   .ticket-number {
     align-items: flex-start;
-  }
-
-  .ticket-top h3 {
-    font-size: 42px;
-  }
-
-  .ticket-detail strong {
-    font-size: 14px;
-  }
-
-  .ticket-contact span {
-    font-size: 10px;
   }
 }

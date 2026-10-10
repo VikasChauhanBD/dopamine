@@ -40,11 +40,10 @@ function Registration() {
   return (
     <section className="registration-section" ref={sectionRef}>
       <div className="registration-header">
-        <span>THE CELEBRATION AWAITS</span>
-
         <h2>
           Your Ticket to
-          <strong> Dopamine.</strong>
+          <br />
+          <strong> Dopamine</strong>
         </h2>
 
         <p>

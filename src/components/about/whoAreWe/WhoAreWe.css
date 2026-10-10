@@ -36,6 +36,15 @@
   transform-origin: 50% 50%;
 }
 
+@keyframes who-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .who-badge-text {
   fill: #ffffff;
   font-size: 22px;
@@ -50,14 +59,16 @@
   width: 62px;
   height: 62px;
   transform: translate(-50%, -50%);
+  transform-origin: center;
+  animation: who-arrow-rotate 18s linear infinite;
 }
 
-@keyframes who-rotate {
+@keyframes who-arrow-rotate {
   from {
-    transform: rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
