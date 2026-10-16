@@ -24,7 +24,7 @@ function MentorSection() {
           <b>The Mother of BTR</b>
           <br />
           <br />
-          “Kahani tumhaari hai. Ho sake toh kamaal likhna.”
+          <b>“Kahani tumhaari hai. Ho sake toh kamaal likhna.”</b>
           <br />
           Some words become more than words. They become a voice in your head
           when things get difficult, a little courage when you need it most, and
@@ -33,14 +33,12 @@ function MentorSection() {
       ),
       fullContent: (
         <>
-          <b>Dr. Zainab Vora</b>
-          <br />
           <b>Founder of CoreBTR</b>
           <br />
           <b>The Mother of BTR</b>
           <br />
-          <b>“Kahani tumhaari hai. Ho sake toh kamaal likhna.”</b>
           <br />
+          <b>“Kahani tumhaari hai. Ho sake toh kamaal likhna.”</b>
           <br />
           Some words become more than words. They become a voice in your head
           when things get difficult, a little courage when you need it most, and
@@ -95,6 +93,8 @@ function MentorSection() {
           <b>Founder of CoreBTR</b>
           <br />
           <br />
+          <b>“Tu kar, main hoon tere saath.”</b>
+          <br />
           And somehow, he means it every single time.
           <br />
           For the conversations that run a little longer. For the worries that
@@ -106,6 +106,9 @@ function MentorSection() {
       ),
       fullContent: (
         <>
+          <b>Founder of CoreBTR</b>
+          <br />
+          <br />
           <b>“Tu kar, main hoon tere saath.”</b>
           <br />
           And somehow, he means it every single time.
@@ -142,8 +145,10 @@ function MentorSection() {
           <b>Founder of E-Conceptual, CoreBTR, Vidya Jeevan</b>
           <br />
           <br />
-          “Teri kismat da likhya tere to koi kho nai sakda, te je us di meher
-          hove te tenu o vi mil jae jo tera ho nai sakda.”
+          <b>
+            “Teri kismat da likhya tere to koi kho nai sakda, te je us di meher
+            hove te tenu o vi mil jae jo tera ho nai sakda.”
+          </b>
           <br />A name students have learnt from, a presence they look forward
           to, and a part of what makes Vidya Jeevan, Vidya Jeevan. Somewhere
           between having a plan and learning to trust the process, there’s a
@@ -152,11 +157,13 @@ function MentorSection() {
       ),
       fullContent: (
         <>
+          <b>Founder of E-Conceptual, CoreBTR, Vidya Jeevan</b>
+          <br />
+          <br />
           <b>
             “Teri kismat da likhya tere to koi kho nai sakda, te je us di meher
             hove te tenu o vi mil jae jo tera ho nai sakda.”
           </b>
-          <br />
           <br />A name students have learnt from, a presence they look forward
           to, and a part of what makes Vidya Jeevan, Vidya Jeevan.
           <br />
@@ -192,8 +199,8 @@ function MentorSection() {
         <>
           <b>Financial & Strategic Consultant | CA</b>
           <br />
-          <b>Our very own Mama Ji Sir.</b>
           <br />
+          <b>Our very own Mama Ji Sir.</b>
           <br />
           For pretty much anything, there’s one name that comes to mind: Mama
           Ji. Whether it’s something you need, something you’ve forgotten,
@@ -203,8 +210,10 @@ function MentorSection() {
       ),
       fullContent: (
         <>
-          <b>Our very own Mama Ji Sir.</b>
+          <b>Financial & Strategic Consultant | CA</b>
           <br />
+          <br />
+          <b>Our very own Mama Ji Sir.</b>
           <br />
           For pretty much anything, there’s one name that comes to mind: Mama
           Ji. Whether it’s something you need, something you’ve forgotten,
@@ -241,7 +250,7 @@ function MentorSection() {
           <b>Founder of Pharmacology by GRG</b>
           <br />
           <br />
-          “Dum bande mein hota hai, branch mein nahi.”
+          <b>“Dum bande mein hota hai, branch mein nahi.”</b>
           <br />
           If you’ve heard Dr. GRG say this, you know the line needs no
           introduction.
@@ -255,6 +264,9 @@ function MentorSection() {
       ),
       fullContent: (
         <>
+          <b>Founder of Pharmacology by GRG</b>
+          <br />
+          <br />
           <b>“Dum bande mein hota hai, branch mein nahi.”</b>
           <br />
           If you’ve heard Dr. GRG say this, you know the line needs no
