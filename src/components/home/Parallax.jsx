@@ -9,6 +9,7 @@ import UpcomingShows from "./upcomingShows/UpcomingShows";
 import SpiralGallery from "./spiralGallery/SpiralGallery";
 import Registration from "./registration/Registration";
 import SillyString from "./sillyString/SillyString";
+import MentorSection from "./mentorSection/MentorSection";
 import "./Parallax.css";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -37,11 +38,12 @@ function Parallax() {
     <main ref={homeRef} className="home-page">
       <div className="home-page__background" aria-hidden="true" />
       <div className="home-page__content">
-        <AboutSection />
-        <FlowingMenu />
-        <UpcomingShows />
         <SpiralGallery />
-        <Registration />
+        <MentorSection />
+        {/* <AboutSection /> */}
+        {/* <FlowingMenu /> */}
+        <UpcomingShows />
+        {/* <Registration /> */}
         <SillyString />
       </div>
     </main>

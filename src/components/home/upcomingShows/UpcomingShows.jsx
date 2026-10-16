@@ -2,102 +2,85 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import "./UpcomingShows.css";
 
-const DUMMY_IMAGE =
-  "https://cdn.dribbble.com/userupload/48226535/file/9e312ca061748d2ceb0b9709c6dca265.jpeg";
+const CTA_LINK = "#"; // <- put the "Get To Know Dopamine" page link here
 
 const SHOWS = [
   {
     id: 1,
-    name: "Anyma",
-    date: "Nov 21, 2026",
-    city: "Mumbai",
-    venue: "Mahalaxmi Racecourse",
+    num: "1",
+    name: "THE RANKERS' SPOTLIGHT",
+    description:
+      "A celebration of milestones, hard work, and the people behind the ranks.",
     link: "#",
-    image: DUMMY_IMAGE,
+    image: "https://vidyajeevan.com/wp-content/uploads/2025/12/DSC01767.jpg",
     poster: {
       from: "#C9B6FF",
       to: "#4B2FA8",
-      title: "Anyma",
-      sub: "Aeden Mumbai",
+      title: "The Rankers' Spotlight",
+      sub: "Attractions",
     },
   },
   {
     id: 2,
-    name: "Adam Port",
-    date: "Dec 05, 2026",
-    city: "Bengaluru",
-    venue: "Embassy Grounds",
+    num: "2",
+    name: "THE FOOD LINEUP",
+    description:
+      "From Purani Dilli chaat to global flavours, fast-food favourites, and lunch and dinner buffets. Come hungry.",
     link: "#",
-    image: DUMMY_IMAGE,
+    image: "https://vidyajeevan.com/wp-content/uploads/2025/12/DSC07136.jpg",
     poster: {
       from: "#FFD3B0",
       to: "#E0562B",
-      title: "Adam Port",
-      sub: "Live in Bengaluru",
+      title: "The Food Lineup",
+      sub: "Attractions",
     },
   },
   {
     id: 3,
-    name: "Francis Mercier",
-    date: "Dec 12, 2026",
-    city: "Goa",
-    venue: "Vagator Beach",
+    num: "3",
+    name: "PLAY MODE: ON",
+    description:
+      "Games, activities, and a chance to give your brain a break from being a medical student.",
     link: "#",
-    image: DUMMY_IMAGE,
+    image: "https://vidyajeevan.com/wp-content/uploads/2025/12/DSC07080.jpg",
     poster: {
       from: "#B7F0E0",
       to: "#0E7C7B",
-      title: "Francis Mercier",
-      sub: "Sunset Session",
+      title: "Play Mode: On",
+      sub: "Attractions",
     },
   },
   {
     id: 4,
-    name: "DJ Snake",
-    date: "Dec 19, 2026",
-    city: "Delhi NCR",
-    venue: "Jawaharlal Nehru Stadium",
+    num: "4",
+    name: "THE DANCE FLOOR CALLS",
+    description:
+      "The DJ's on, your favourite tracks are playing, and the rest is up to you.",
     link: "#",
-    image: DUMMY_IMAGE,
+    image: "https://vidyajeevan.com/wp-content/uploads/2025/12/DSC07097.jpg",
     poster: {
       from: "#FFC2DA",
       to: "#B3135F",
-      title: "DJ Snake",
-      sub: "Delhi Night",
+      title: "The Dance Floor Calls",
+      sub: "Attractions",
     },
   },
   {
     id: 5,
-    name: "Alesso",
-    date: "Dec 27, 2026",
-    city: "Pune",
-    venue: "Koregaon Park Arena",
+    num: "4",
+    name: "THE FLOOR IS YOURS",
+    description:
+      "Dr. Zainab, Dr. Ravi, Dr. GRG and Dr. Apurv come together on one stage, with students invited to sing, dance, perform, or surprise us with something entirely their own.",
     link: "#",
-    image: DUMMY_IMAGE,
+    image: "https://vidyajeevan.com/wp-content/uploads/2025/12/DSC07127.jpg",
     poster: {
       from: "#BFD8FF",
       to: "#1B4DB3",
-      title: "Alesso",
-      sub: "Pune Live",
-    },
-  },
-  {
-    id: 6,
-    name: "Sunburn Festival",
-    date: "Dec 28, 2026",
-    city: "Goa",
-    venue: "Vagator",
-    link: "#",
-    image: DUMMY_IMAGE,
-    poster: {
-      from: "#FFF0A8",
-      to: "#D98A00",
-      title: "Sunburn",
-      sub: "Festival 2026",
+      title: "The Floor Is Yours",
+      sub: "Attractions",
     },
   },
 ];
-
 function ArrowIcon() {
   return (
     <svg
@@ -303,8 +286,17 @@ export default function UpcomingShows() {
     const { x, y, rotate } = setters.current;
     if (!x) return;
 
-    x(e.clientX + 40);
-    y(e.clientY);
+    // keep the (now larger) preview fully inside the viewport
+    const halfW = previewRef.current.offsetWidth / 2;
+    const halfH = previewRef.current.offsetHeight / 2;
+    x(
+      gsap.utils.clamp(
+        halfW + 16,
+        window.innerWidth - halfW - 16,
+        e.clientX + 40,
+      ),
+    );
+    y(gsap.utils.clamp(halfH + 16, window.innerHeight - halfH - 16, e.clientY));
 
     const dx = e.clientX - lastX.current;
     lastX.current = e.clientX;
@@ -330,9 +322,13 @@ export default function UpcomingShows() {
         <header className="us-header">
           <h2 className="us-title">
             <span className="us-title-mask">
-              <span className="us-title-inner">About Dopamine</span>
+              <span className="us-title-inner">Attractions</span>
             </span>
           </h2>
+          <p className="us-intro us-label">
+            One big get-together. A whole lot happening. And absolutely no
+            reason to spend the day wondering what to do next.
+          </p>
         </header>
 
         <div className="us-divider" />
@@ -358,10 +354,12 @@ export default function UpcomingShows() {
                 <span className="us-fill" />
                 <span className="us-row-mask">
                   <span className="us-row-inner">
-                    <span className="us-name">{show.name}</span>
+                    <span className="us-name">
+                      <span className="us-num">{show.num}.</span>
+                      {show.name}
+                    </span>
                     <span className="us-meta">
-                      <span className="us-date">{show.date}</span>
-                      <span className="us-city">{show.city}</span>
+                      <span className="us-desc">{show.description}</span>
                     </span>
                     <span className="us-arrow">
                       <ArrowIcon />
@@ -373,6 +371,12 @@ export default function UpcomingShows() {
             </li>
           ))}
         </ul>
+
+        <div className="us-cta">
+          <a className="us-cta-link" href={CTA_LINK}>
+            Get To Know Dopamine →
+          </a>
+        </div>
       </div>
 
       <div className="us-preview" ref={previewRef} aria-hidden="true">
@@ -390,9 +394,7 @@ export default function UpcomingShows() {
                 <span className="us-poster-orb" />
                 <span className="us-poster-title">{show.poster.title}</span>
                 <span className="us-poster-sub">{show.poster.sub}</span>
-                <span className="us-poster-foot">
-                  {show.date} - {show.venue}
-                </span>
+                <span className="us-poster-foot">{show.name}</span>
               </div>
             )}
           </div>

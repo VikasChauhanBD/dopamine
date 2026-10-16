@@ -17,31 +17,61 @@ function VideoHero() {
         delay: 0.3,
       });
 
-      tl.from(".hero-title", {
-        y: 80,
+      tl.from(".hero-presenter", {
+        y: 30,
         opacity: 0,
-        duration: 1.2,
-        ease: "power4.out",
+        duration: 0.7,
+        ease: "power3.out",
       })
         .from(
-          ".hero-sub-title",
+          ".hero-title",
           {
-            y: 50,
+            y: 80,
             opacity: 0,
-            duration: 0.9,
-            ease: "power3.out",
+            duration: 1.2,
+            ease: "power4.out",
           },
-          "-=0.7",
+          "-=0.3",
         )
         .from(
-          ".hero-para",
+          ".hero-sub-title",
           {
             y: 40,
             opacity: 0,
             duration: 0.8,
             ease: "power3.out",
           },
-          "-=0.5",
+          "-=0.6",
+        )
+        .from(
+          ".hero-date",
+          {
+            y: 30,
+            opacity: 0,
+            duration: 0.7,
+            ease: "power3.out",
+          },
+          "-=0.4",
+        )
+        .from(
+          ".hero-para",
+          {
+            y: 30,
+            opacity: 0,
+            duration: 0.7,
+            ease: "power3.out",
+          },
+          "-=0.4",
+        )
+        .from(
+          ".hero-tag",
+          {
+            y: 20,
+            opacity: 0,
+            duration: 0.6,
+            ease: "power3.out",
+          },
+          "-=0.3",
         );
     },
     {
@@ -78,19 +108,25 @@ function VideoHero() {
       </div>
 
       <div className="hero-content">
+        <p className="hero-presenter">VIDYA JEEVAN PRESENTS</p>
+
         <h1 className="hero-title">DOPAMINE</h1>
 
-        <h2 className="hero-sub-title">High On Life</h2>
+        <h2 className="hero-sub-title">Get High On Life.</h2>
+
+        <p className="hero-date">14 NOVEMBER 2026</p>
+
+        <p className="hero-tag">Your people. Your music. Your moment.</p>
 
         <p className="hero-para">
-          A Felicitation Ceremony for
-          <br />
-          NEET PG . INI-CET . FMGE 2026 Achievers
+          An evening of live music, DJ, games, food, entertainment
+          <br className="desktop-break" /> and a felicitation ceremony for the
+          stars of the day.
         </p>
 
-        <p className="hero-tag">
-          “Kahani tumhari thi… or tumne kiya kamaal likhi.”
-        </p>
+        <a href="#event-details" className="hero-cta">
+          LET'S GET INTO IT <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
   );

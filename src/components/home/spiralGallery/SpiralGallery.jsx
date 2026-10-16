@@ -628,14 +628,28 @@ const SpiralGallery = () => {
       </div>
 
       <div className="spiral-content">
-        <h2 className="spiral-heading">Felicitation Ceremony 2025</h2>
+        <h2 className="spiral-heading">About Dopamine</h2>
+        <h3 className="spiral-sub-heading">
+          One community. One epic get-together
+        </h3>
         <p className="spiral-description">
-          A celebration of dedication, perseverance, and success. Join us as we
-          honour the remarkable achievements of NEET PG, INI-CET & FMGE
-          aspirants who turned their dreams into reality through relentless
-          effort and determination. This is more than a felicitation - it is a
-          celebration of the journey, the hard work, and the milestones that
-          made their success possible.
+          Same world. Shared madness. A whole lot to celebrate.
+          <br />
+          From the people who've been part of your journey to the mentors who've
+          made a difference, DOPAMINE brings the Vidya Jeevan community together
+          for an evening that calls for more than a group photo.
+          <br />
+          Now imagine bringing everyone together for an evening where the
+          conversations go beyond ranks, the music gets louder, and the only
+          thing on the schedule is having a good time.
+          <br />
+          <b>That's DOPAMINE.</b>
+          <br />
+          Brought to you by Vidya Jeevan, it's a celebration for our student
+          community, filled with experiences to enjoy and people to enjoy them
+          with.
+          <br />
+          14 November. Circle the date.
         </p>
       </div>
 

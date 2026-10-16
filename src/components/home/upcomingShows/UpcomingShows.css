@@ -36,6 +36,16 @@
   display: inline-block;
 }
 
+/* Intro line under the title */
+.us-intro {
+  max-width: 760px;
+  margin: 12px 0 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #cfcbe6;
+}
+
 .us-divider {
   width: 100%;
   height: 2px;
@@ -87,38 +97,44 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  padding: 18px 0;
+  gap: 32px;
+  padding: 28px 0;
 }
 
 .us-name {
   flex: 1 1 auto;
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: #ffffff;
 }
 
+/* Row number (1. 2. 3. ...) */
+.us-num {
+  display: inline-block;
+  margin-right: 14px;
+  font-size: 0.62em;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #f28705;
+}
+
+/* Description column */
 .us-meta {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 2px;
-  min-width: 170px;
-  text-align: right;
-  font-size: 15px;
-  line-height: 1.3;
+  align-items: flex-start;
+  flex: 0 0 380px;
+  width: 380px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.55;
 }
 
-.us-date {
-  font-weight: 700;
-  color: #ffffff;
-}
-
-.us-city {
+.us-desc {
   font-weight: 500;
-  color: #9a96b8;
+  color: #ffffff;
 }
 
 .us-arrow {
@@ -166,13 +182,40 @@
   text-underline-offset: 6px;
 }
 
+/* "Get To Know Dopamine" button */
+.us-cta {
+  margin-top: 56px;
+}
+
+.us-cta-link {
+  display: inline-block;
+  padding: 16px 34px;
+  border: 2px solid #f28705;
+  border-radius: 999px;
+  color: #f28705;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+.us-cta-link:hover,
+.us-cta-link:focus-visible {
+  background: #f28705;
+  color: #000000;
+  outline: none;
+}
+
 /* Floating preview */
 .us-preview {
   position: fixed;
   top: 0;
   left: 0;
-  width: 270px;
-  height: 330px;
+  width: 520px;
+  aspect-ratio: 16 / 9;
+  max-height: 85vh;
   border-radius: 18px;
   overflow: hidden;
   pointer-events: none;
@@ -254,13 +297,51 @@
   opacity: 0.85;
 }
 
-@media (max-width: 90px) {
+/* ---------------------------------- Responsive ------------------------- */
+
+@media (max-width: 1100px) {
+  .us-name {
+    font-size: 30px;
+  }
+
+  .us-meta {
+    flex-basis: 320px;
+    width: 320px;
+    font-size: 15px;
+  }
+}
+
+/* Tablet / small laptop: description drops under the title */
+@media (max-width: 900px) {
   .us-title {
     font-size: 38px;
   }
 
+  .us-intro {
+    font-size: 18px;
+  }
+
+  .us-row-inner {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 20px;
+    padding: 24px 0;
+  }
+
   .us-name {
-    font-size: 32px;
+    flex: 1 1 calc(100% - 70px);
+    font-size: 30px;
+  }
+
+  .us-arrow {
+    order: 2;
+  }
+
+  .us-meta {
+    order: 3;
+    flex: 1 1 100%;
+    width: 100%;
+    font-size: 16px;
   }
 }
 
@@ -273,18 +354,22 @@
     font-size: 32px;
   }
 
+  .us-intro {
+    font-size: 16px;
+  }
+
   .us-name {
-    font-size: 28px;
+    flex-basis: calc(100% - 56px);
+    font-size: 24px;
   }
 
   .us-row-inner {
-    gap: 14px;
-    padding: 16px 0;
+    gap: 8px 14px;
+    padding: 20px 0;
   }
 
   .us-meta {
-    min-width: 0;
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .us-arrow {
@@ -302,6 +387,15 @@
     right: -8px;
   }
 
+  .us-cta {
+    margin-top: 40px;
+  }
+
+  .us-cta-link {
+    padding: 14px 26px;
+    font-size: 16px;
+  }
+
   .us-preview {
     display: none;
   }
@@ -314,7 +408,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .us-arrow {
+  .us-arrow,
+  .us-cta-link {
     transition: none;
   }
 }

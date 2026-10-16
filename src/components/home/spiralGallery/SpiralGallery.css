@@ -4,7 +4,8 @@
   isolation: isolate;
   width: 100%;
   height: 100vh;
-  background: #131418;
+  /* background: #131418; */
+  background: transparent !important;
   color: white;
   overflow: hidden;
 }
@@ -35,19 +36,28 @@
   right: 5%;
   transform: translateY(-50%);
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   z-index: 2;
   text-align: right;
   pointer-events: none;
 }
 
 .spiral-heading {
-  margin: 0 0 30px;
   font-size: 48px;
   font-weight: 600;
   line-height: 1.08;
   text-transform: uppercase;
   color: #f28705;
+}
+
+.spiral-sub-heading {
+  position: relative;
+  width: 100%;
+  color: #f25c05;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 20px 0;
 }
 
 .spiral-description {
@@ -58,6 +68,13 @@
 }
 
 /* -------------------------------- Responsive Styles ------------------------------ */
+
+@media (max-width: 1440px) {
+  .spiral-content {
+    width: 100%;
+    max-width: 520px;
+  }
+}
 
 @media (max-width: 900px) {
   .spiral-heading {
@@ -132,7 +149,15 @@
 }
 
 @media (max-width: 500px) {
+  .spiral-content {
+    padding: 800px 10px 28px;
+  }
+
   .spiral-heading {
     font-size: 32px;
+  }
+
+  .spiral-sub-heading {
+    font-size: 16px;
   }
 }
