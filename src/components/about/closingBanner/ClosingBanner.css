@@ -1,0 +1,99 @@
+.closing-banner {
+  padding: 0 6% 64px;
+  background: #ffffff;
+}
+
+.closing-banner__card {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 1px solid #021f59;
+  border-radius: 16px;
+  background: #021f59;
+  color: #ffffff;
+  box-shadow: 0 5px 0 #000000;
+}
+
+.closing-banner__presenter {
+  margin-bottom: 24px;
+  color: #f28705;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.closing-banner h2 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.closing-banner h2 span {
+  display: block;
+}
+
+.closing-banner h2 span + span {
+  margin-top: 20px;
+}
+
+.closing-banner__description {
+  max-width: 960px;
+  margin: 24px 0;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.closing-banner__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 52px;
+  padding: 14px 24px;
+  border: 2px solid #f28705;
+  border-radius: 8px;
+  background: #f28705;
+  color: #021f59;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.closing-banner__cta:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.closing-banner__cta:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .closing-banner {
+    padding-bottom: 48px;
+  }
+  .closing-banner__card {
+    padding: 32px;
+  }
+  .closing-banner h2 {
+    font-size: 24px;
+  }
+  .closing-banner__description {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 500px) {
+  .closing-banner {
+    padding: 0 20px 36px;
+  }
+  .closing-banner__card {
+    padding: 24px;
+  }
+}
