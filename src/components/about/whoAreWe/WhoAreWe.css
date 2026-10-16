@@ -73,16 +73,24 @@
 }
 
 .who-content {
-  max-width: 670px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .who-title {
-  margin: 0 0 28px 0;
   color: #ffffff;
   font-size: 48px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.who-sub-title {
+  margin: 20px 0;
+  color: #ffffff;
+  font-size: 28px;
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: 1px;
@@ -95,6 +103,23 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 28px;
+}
+
+.who-text p {
+  margin: 0 0 16px;
+}
+
+.who-text ul {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+
+.who-text li {
+  margin-bottom: 8px;
+}
+
+.who-text p:last-child {
+  margin-bottom: 0;
 }
 
 .who-button {
@@ -122,6 +147,22 @@
 .who-button:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 3px;
+}
+
+.who-text .who-highlight {
+  color: #f28705;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.who-text li::marker {
+  color: #f28705;
+}
+
+.who-text em {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* ------------------------------ Responsive --------------------------------- */

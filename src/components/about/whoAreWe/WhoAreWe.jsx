@@ -48,7 +48,7 @@ const WhoAreWe = () => {
                 textLength="835"
                 lengthAdjust="spacing"
               >
-                ASIA'S LARGEST MUSIC FESTIVAL IS BACK TO GOA. BUY TICKETS NOW!
+                EXPLORE THE EXPERIENCE | EXPLORE THE EXPERIENCE |
               </textPath>
             </text>
           </svg>
@@ -69,20 +69,42 @@ const WhoAreWe = () => {
 
         {/* Right: content */}
         <div className="who-content">
-          <h2 className="who-title">HOME TO ASIA'S LARGEST MUSIC FESTIVAL</h2>
+          <h2 className="who-title">THE RANKERS' SPOTLIGHT</h2>
+          <h3 className="who-sub-title">YOUR MILESTONE. YOUR MOMENT. </h3>
 
-          <p className="who-text">
-            With a legacy that dates back from 2007, Sunburn has hosted some of
-            the biggest shows across India and has been a parent entertainment
-            property to have curated some of the celebrated names from the
-            World. With our vision and mission as a Music Festival – we have had
-            the privilege of contributing a large piece in building up the
-            nightlife and concert industry in India.
-          </p>
+          <div className="who-text">
+            <p>
+              Every result has a story behind it. At DOPAMINE, we're bringing
+              our achievers together to celebrate the hard work, determination,
+              and milestones that made this year special.
+            </p>
 
-          <button type="button" className="who-button">
-            Follow Us
-          </button>
+            <p className="who-highlight">
+              NEET-PG 2026 · INI-CET MAY & NOVEMBER 2026 · FMGE JUNE & OCTOBER
+              2026
+            </p>
+
+            <p>
+              At DOPAMINE, we're celebrating students who've achieved these
+              milestones in the 2026 PG Medical Examinations.
+            </p>
+
+            <ul>
+              <li>NEET-PG 2026: All India Rank up to 10,000</li>
+              <li>INI-CET May 2026: All India Rank up to 1,000</li>
+              <li>INI-CET November 2026: All India Rank up to 1,000</li>
+              <li>FMGE June 2026: All candidates who qualified</li>
+            </ul>
+
+            <p>
+              For November INI-CET 2026 and October FMGE 2026, registrations
+              will open once the respective results are announced.
+            </p>
+
+            <p>
+              <em>Policies and rules will be announced here.</em>
+            </p>
+          </div>
         </div>
       </div>
     </section>

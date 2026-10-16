@@ -72,7 +72,8 @@ const SHOWS = [
     description:
       "Dr. Zainab, Dr. Ravi, Dr. GRG and Dr. Apurv come together on one stage, with students invited to sing, dance, perform, or surprise us with something entirely their own.",
     link: "#",
-    image: "https://vidyajeevan.com/wp-content/uploads/2025/12/DSC07127.jpg",
+    image:
+      "https://cdn.dribbble.com/userupload/46355808/file/f2274fc9ca13235e117b03ebf82f2320.jpg",
     poster: {
       from: "#BFD8FF",
       to: "#1B4DB3",
