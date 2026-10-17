@@ -136,6 +136,7 @@ const SpiralGallery = () => {
 
     let disposed = false;
     let rafId = null;
+    let resizeObserver;
 
     const numberOfImages = imageUrls.length;
     let scene, camera, renderer, spiralMesh, tiltGroup, shaderMaterial, texture;
@@ -162,7 +163,7 @@ const SpiralGallery = () => {
       spiralRadius: 3.5,
       spiralTurns: 2.8 + (numberOfImages - 21) * 0.1,
       spiralHeight: 12 + (numberOfImages - 21) * 0.25,
-      centerX: -2,
+      centerX: window.innerWidth > 900 ? -3.5 : 0,
       centerY: 4.38,
       centerZ: 0,
     };
@@ -431,8 +432,7 @@ const SpiralGallery = () => {
       } else {
         return;
       }
-      camera.position.z = 9 / zoomLevel;
-      camera.position.y = 3.5 / zoomLevel;
+      frameSpiral();
     };
 
     const onMouseDown = (e) => {
@@ -493,9 +493,25 @@ const SpiralGallery = () => {
       touchVelocity = 0;
     };
 
+    function frameSpiral() {
+      if (!camera || !spiralMesh) return;
+      const compact = window.innerWidth <= 900;
+      const shortMobile = window.innerWidth <= 425;
+      spiralMesh.scale.y = shortMobile ? 0.78 : 1;
+      spiralMesh.position.x = compact ? 0 : -3.5;
+      scene.updateMatrixWorld(true);
+      // Center the rendered, tilted geometry rather than its local origin.
+      const center = new THREE.Box3().setFromObject(spiralMesh).getCenter(new THREE.Vector3());
+      const x = compact ? center.x : 0;
+      const y = compact ? center.y : 3.5 / zoomLevel;
+      camera.position.set(x, y, 9 / zoomLevel);
+      camera.lookAt(x, y, 0);
+    }
+
     const onResize = () => {
       if (!camera || !renderer) return;
       const { w, h } = getSize();
+      frameSpiral();
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
       renderer.setSize(w, h, false);
@@ -578,7 +594,10 @@ const SpiralGallery = () => {
       tiltGroup.add(spiralMesh);
 
       rebuildGeometry();
+      frameSpiral();
 
+      resizeObserver = new ResizeObserver(onResize);
+      resizeObserver.observe(container);
       window.addEventListener("resize", onResize);
       window.addEventListener("keydown", onKeyDown);
       window.addEventListener("mousemove", onMouseMove);
@@ -602,6 +621,7 @@ const SpiralGallery = () => {
       disposed = true;
       if (rafId) cancelAnimationFrame(rafId);
 
+      resizeObserver?.disconnect();
       window.removeEventListener("resize", onResize);
       window.removeEventListener("keydown", onKeyDown);
       window.removeEventListener("mousemove", onMouseMove);

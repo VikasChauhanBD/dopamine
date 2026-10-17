@@ -208,95 +208,6 @@
   outline: none;
 }
 
-/* Floating preview */
-.us-preview {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 520px;
-  aspect-ratio: 16 / 9;
-  max-height: 85vh;
-  border-radius: 18px;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 50;
-  background: #000000;
-  box-shadow:
-    0 30px 60px rgba(120, 80, 255, 0.25),
-    0 8px 18px rgba(0, 0, 0, 0.6);
-  will-change: transform;
-}
-
-.us-poster {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  clip-path: inset(100% 0% 0% 0%);
-}
-
-.us-poster:first-child {
-  clip-path: inset(0% 0% 0% 0%);
-}
-
-.us-poster-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.us-poster-art {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  height: 100%;
-  padding: 24px 22px;
-  color: #ffffff;
-  overflow: hidden;
-}
-
-.us-poster-orb {
-  position: absolute;
-  top: 34px;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  margin-left: -75px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.28);
-  border: 2px solid rgba(255, 255, 255, 0.6);
-}
-
-.us-poster-title {
-  position: relative;
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.01em;
-}
-
-.us-poster-sub {
-  position: relative;
-  margin-top: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  opacity: 0.9;
-}
-
-.us-poster-foot {
-  position: relative;
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
-  font-size: 12px;
-  font-weight: 500;
-  opacity: 0.85;
-}
-
 /* ---------------------------------- Responsive ------------------------- */
 
 @media (max-width: 1100px) {
@@ -396,20 +307,41 @@
     font-size: 16px;
   }
 
-  .us-preview {
-    display: none;
-  }
 }
 
-@media (hover: none) {
-  .us-preview {
-    display: none;
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .us-arrow,
   .us-cta-link {
+    transition: none;
+  }
+}
+
+.us-name,
+.us-fill,
+.us-arrow-icon {
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.us-row:hover .us-name,
+.us-row:focus-visible .us-name {
+  color: #ce93ff;
+}
+
+.us-row:hover .us-fill,
+.us-row:focus-visible .us-fill {
+  transform: scaleY(1);
+}
+
+.us-row:hover .us-arrow-icon,
+.us-row:focus-visible .us-arrow-icon {
+  transform: rotate(45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .us-name,
+  .us-fill,
+  .us-arrow-icon {
     transition: none;
   }
 }

@@ -7,9 +7,9 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 40px;
-  border: 1px solid #021f59;
+  border: 1px solid #0266ba;
   border-radius: 16px;
-  background: #021f59;
+  background: #0266ba;
   color: #ffffff;
   box-shadow: 0 5px 0 #000000;
 }
@@ -56,7 +56,7 @@
   border: 2px solid #f28705;
   border-radius: 8px;
   background: #f28705;
-  color: #021f59;
+  color: #0266ba;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;

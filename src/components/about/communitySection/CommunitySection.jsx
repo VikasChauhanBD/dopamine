@@ -4,41 +4,18 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiArrowUpRight } from "react-icons/fi";
 import "./CommunitySection.css";
+import communityPaint from "../../../assets/community-paint.png";
+import corebtrLogo from "../../../assets/images/corebtr-logo.png";
+import econceptualLogo from "../../../assets/images/econceptual-logo.png";
+import grgLogo from "../../../assets/images/grg-logo.png";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-
-const mentors = [
-  {
-    name: "Dr. Zainab Vora",
-    image:
-      "https://cdn.dribbble.com/userupload/49257897/file/c024d98dee96a225a17137a559671902.jpeg",
-  },
-  {
-    name: "Dr. Ravi Sharma",
-    image:
-      "https://cdn.dribbble.com/userupload/49257894/file/42c17dad43b16db8a8699feb77af5c10.jpeg",
-  },
-  {
-    name: "Dr. Apurv Mehra",
-    image:
-      "https://cdn.dribbble.com/userupload/49258317/file/08bfa49831f127304deb84f28026585f.jpeg",
-  },
-  {
-    name: "Dr. Gobind Rai Garg",
-    image:
-      "https://cdn.dribbble.com/userupload/49257896/file/4fa0a75b33442d1ffae2ef626612c231.jpeg",
-  },
-];
-const platformMentors = [
-  mentors.slice(0, 3),
-  [mentors[2]],
-  [mentors[3]],
-  mentors,
-];
 
 const platforms = [
   {
     name: "CoreBTR",
+    image: corebtrLogo,
+    imageType: "logo",
     paragraphs: [
       "Built for medical entrance preparation, CoreBTR helps students revise, practise, and prepare for NEET-PG, INI-CET and FMGE. But it has always been about more than preparation.",
       "CoreBTR brings together Dr. ZV's pioneering BTR approach, taught by her across all 19 subjects, Dr. Ravi's guidance on studying smarter and navigating the journey, and Dr. Apurv's philosophy of perseverance, moving forward, and trusting the bigger picture.",
@@ -49,12 +26,16 @@ const platforms = [
   },
   {
     name: "eConceptual",
+    image: econceptualLogo,
+    imageType: "logo",
     paragraphs: [
       "Founded by Dr. Apurv Mehra, eConceptual is built for the next chapter of a doctor's journey: residency. With learning designed around the demands of postgraduate training, it helps residents keep growing through the challenges of clinical life.",
     ],
   },
   {
     name: "PHARMACOLOGY BY DR. GRG",
+    image: grgLogo,
+    imageType: "logo",
     subtitle: "Powered by eConceptual",
     paragraphs: [
       "With over two decades of teaching, Dr. Gobind Rai Garg has helped generations of medical students understand Pharmacology with greater clarity and confidence.",
@@ -63,6 +44,10 @@ const platforms = [
   },
   {
     name: "VIDYA JEEVAN",
+    // Demo URL: replace with your Vidya Jeevan image URL.
+    image:
+      "https://cdn.dribbble.com/userupload/49348522/file/bd856b87c15848514e8bbffd9b4d94eb.webp",
+    imageType: "photo",
     subtitle:
       "More than a place. More than a community. A small chapter in thousands of journeys.",
     paragraphs: [
@@ -124,16 +109,14 @@ function CommunitySection() {
                 scrollTrigger: {
                   trigger: card,
                   start: "top 88%",
-                  end: "bottom top",
-                  toggleActions: "restart none restart reset",
+                  toggleActions: "play none none none",
                 },
               });
 
               timeline
                 .from(visual, {
                   x: direction * distance,
-                  scale: 1.06,
-                  opacity: 0,
+                  scale: 1.03,
                   duration: 1.1,
                 })
                 .from(
@@ -210,22 +193,28 @@ function CommunitySection() {
               id={`community-platform-${index}`}
               aria-labelledby={`community-title-${index}`}
             >
-              <div className="community-section__visual">
-                <div
-                  className="community-section__photos"
-                  data-count={platformMentors[index].length}
-                >
-                  {platformMentors[index].map((mentor) => (
-                    <figure key={mentor.name}>
-                      <img
-                        src={mentor.image}
-                        alt={mentor.name}
-                        loading="lazy"
-                      />
-                      <figcaption>{mentor.name}</figcaption>
-                    </figure>
-                  ))}
-                </div>
+              <div
+                className={`community-section__visual${platform.imageType === "logo" ? " community-section__visual--logo" : ""}`}
+              >
+                {platform.imageType === "logo" && (
+                  <img
+                    className="community-section__paint"
+                    src={communityPaint}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                  />
+                )}
+                <img
+                  className={`community-section__platform-image community-section__platform-image--${platform.imageType}`}
+                  src={platform.image}
+                  alt={
+                    platform.imageType === "logo"
+                      ? `${platform.name} logo`
+                      : "Vidya Jeevan image placeholder"
+                  }
+                  loading="lazy"
+                />
               </div>
               <div className="community-section__content">
                 <div className="community-section__identity">

@@ -1,14 +1,7 @@
-import React, { useRef, useState, useEffect } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import React, { useState, useEffect } from "react";
 import "./MentorSection.css";
-import { NavLink } from "react-router-dom";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 function MentorSection() {
-  const container = useRef(null);
   const [activeCard, setActiveCard] = useState(null);
 
   const cardsData = [
@@ -135,8 +128,87 @@ function MentorSection() {
         </>
       ),
     },
+
     {
       id: 3,
+      image:
+        "https://cdn.dribbble.com/userupload/49257895/file/552c920e376be5a9a98bca4e1b403f2d.jpeg",
+      title: "Mr. Ritesh Kapoor",
+      fullContent: (
+        <>
+          <b>Financial & Strategic Consultant | CA</b>
+          <br />
+          <br />
+          <b>Our very own Mama Ji Sir.</b>
+          <br />
+          For pretty much anything, there’s one name that comes to mind: Mama
+          Ji. Whether it’s something you need, something you’ve forgotten,
+          something that’s gone wrong, or something you simply need help
+          figuring out, you know where to go.
+          <br />
+          <br />
+          And while students know him as their go-to person for just about
+          everything, there’s a much bigger story behind the place they call
+          Vidya Jeevan. From one floor to an entire building, Mama Ji has been
+          part of building VJ into what it is today, one step, one challenge,
+          and a whole lot of dedication at a time.
+          <br />
+          <br />
+          The building may have grown, but for students, some things have stayed
+          just the same: the familiar face, the helping hand, and the feeling
+          that Mama Ji is always somewhere around.
+          <br />
+          <br />
+          <b>
+            The hands that helped build Vidya Jeevan, and the heart that makes
+            it feel like home.
+          </b>
+        </>
+      ),
+    },
+    {
+      id: 4,
+      image:
+        "https://cdn.dribbble.com/userupload/49257896/file/4fa0a75b33442d1ffae2ef626612c231.jpeg",
+      title: "Dr. Gobind Rai Garg",
+      fullContent: (
+        <>
+          <b>Founder of Pharmacology by GRG</b>
+          <br />
+          <br />
+          <b>“Dum bande mein hota hai, branch mein nahi.”</b>
+          <br />
+          If you’ve heard Dr. GRG say this, you know the line needs no
+          introduction.
+          <br />
+          <br />
+          For generations of medical students, Dr. GRG has been the name in
+          Pharmacology. Years of teaching, concepts that finally click, and a
+          familiar voice through countless hours of preparation. For many VJ
+          students, their association with him began long before they ever
+          walked through VJ’s doors.
+          <br />
+          <br />
+          But Dr. GRG’s place at Vidya Jeevan represents the kind of medical
+          education VJ brings together: educators who leave a mark far beyond
+          their lectures, perspectives that stay with students, and people who
+          make the experience here so much bigger than exam preparation.
+          <br />
+          <br />
+          And when those surprise visits happen, that connection comes alive
+          right here at VJ.
+          <br />
+          <br />
+          <b>
+            From shaping how generations learn Pharmacology to inspiring the
+            doctors they’re becoming, Dr. GRG’s impact reaches far beyond the
+            classroom.
+          </b>
+        </>
+      ),
+    },
+    {
+      id: 5,
       image:
         "https://cdn.dribbble.com/userupload/49258317/file/08bfa49831f127304deb84f28026585f.jpeg",
       title: "Dr. Apurv Mehra",
@@ -190,170 +262,7 @@ function MentorSection() {
         </>
       ),
     },
-    {
-      id: 4,
-      image:
-        "https://cdn.dribbble.com/userupload/49257895/file/552c920e376be5a9a98bca4e1b403f2d.jpeg",
-      title: "Mr. Ritesh Kapoor",
-      description: (
-        <>
-          <b>Financial & Strategic Consultant | CA</b>
-          <br />
-          <br />
-          <b>Our very own Mama Ji Sir.</b>
-          <br />
-          For pretty much anything, there’s one name that comes to mind: Mama
-          Ji. Whether it’s something you need, something you’ve forgotten,
-          something that’s gone wrong, or something you simply need help
-          figuring out, you know where to go.
-        </>
-      ),
-      fullContent: (
-        <>
-          <b>Financial & Strategic Consultant | CA</b>
-          <br />
-          <br />
-          <b>Our very own Mama Ji Sir.</b>
-          <br />
-          For pretty much anything, there’s one name that comes to mind: Mama
-          Ji. Whether it’s something you need, something you’ve forgotten,
-          something that’s gone wrong, or something you simply need help
-          figuring out, you know where to go.
-          <br />
-          <br />
-          And while students know him as their go-to person for just about
-          everything, there’s a much bigger story behind the place they call
-          Vidya Jeevan. From one floor to an entire building, Mama Ji has been
-          part of building VJ into what it is today, one step, one challenge,
-          and a whole lot of dedication at a time.
-          <br />
-          <br />
-          The building may have grown, but for students, some things have stayed
-          just the same: the familiar face, the helping hand, and the feeling
-          that Mama Ji is always somewhere around.
-          <br />
-          <br />
-          <b>
-            The hands that helped build Vidya Jeevan, and the heart that makes
-            it feel like home.
-          </b>
-        </>
-      ),
-    },
-    {
-      id: 5,
-      image:
-        "https://cdn.dribbble.com/userupload/49257896/file/4fa0a75b33442d1ffae2ef626612c231.jpeg",
-      title: "Dr. Gobind Rai Garg",
-      description: (
-        <>
-          <b>Founder of Pharmacology by GRG</b>
-          <br />
-          <br />
-          <b>“Dum bande mein hota hai, branch mein nahi.”</b>
-          <br />
-          If you’ve heard Dr. GRG say this, you know the line needs no
-          introduction.
-          <br />
-          For generations of medical students, Dr. GRG has been the name in
-          Pharmacology. Years of teaching, concepts that finally click, and a
-          familiar voice through countless hours of preparation. For many VJ
-          students, their association with him began long before they ever
-          walked through VJ’s doors.
-        </>
-      ),
-      fullContent: (
-        <>
-          <b>Founder of Pharmacology by GRG</b>
-          <br />
-          <br />
-          <b>“Dum bande mein hota hai, branch mein nahi.”</b>
-          <br />
-          If you’ve heard Dr. GRG say this, you know the line needs no
-          introduction.
-          <br />
-          <br />
-          For generations of medical students, Dr. GRG has been the name in
-          Pharmacology. Years of teaching, concepts that finally click, and a
-          familiar voice through countless hours of preparation. For many VJ
-          students, their association with him began long before they ever
-          walked through VJ’s doors.
-          <br />
-          <br />
-          But Dr. GRG’s place at Vidya Jeevan represents the kind of medical
-          education VJ brings together: educators who leave a mark far beyond
-          their lectures, perspectives that stay with students, and people who
-          make the experience here so much bigger than exam preparation.
-          <br />
-          <br />
-          And when those surprise visits happen, that connection comes alive
-          right here at VJ.
-          <br />
-          <br />
-          <b>
-            From shaping how generations learn Pharmacology to inspiring the
-            doctors they’re becoming, Dr. GRG’s impact reaches far beyond the
-            classroom.
-          </b>
-        </>
-      ),
-    },
   ];
-
-  useGSAP(
-    () => {
-      const cards = gsap.utils.toArray(
-        ".mentor-section-card",
-        container.current,
-      );
-      const cardInners = gsap.utils.toArray(
-        ".mentor-section-card-inner",
-        container.current,
-      );
-
-      if (!cards.length) return;
-      cards.forEach((card, index) => {
-        card.style.setProperty("--card-index", index);
-        if (index === cards.length - 1) return;
-        const nextCard = cards[index + 1];
-        const cardInner = cardInners[index];
-        if (!nextCard || !cardInner) return;
-        const toScale = 1 - (cards.length - 1 - index) * 0.08;
-        ScrollTrigger.create({
-          trigger: nextCard,
-          start: "top 20px",
-          end: () => `bottom ${window.innerHeight - card.offsetHeight}px`,
-          scrub: true,
-          onUpdate: (self) => {
-            const progress = self.progress;
-            const scale = gsap.utils.interpolate(1, toScale, progress);
-            const brightness = gsap.utils.interpolate(1, 0.65, progress);
-            gsap.set(cardInner, {
-              scale,
-              filter: `brightness(${brightness})`,
-            });
-          },
-        });
-      });
-
-      gsap.from(".mentor-section-header > *", {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".mentor-section-header",
-          start: "top 80%",
-          toggleActions: "play none none none",
-        },
-      });
-      ScrollTrigger.refresh();
-    },
-    {
-      scope: container,
-    },
-  );
 
   // Read more popup: close on Escape + lock page scroll while open
   useEffect(() => {
@@ -371,7 +280,7 @@ function MentorSection() {
   }, [activeCard]);
 
   return (
-    <section className="mentor-section-container" ref={container}>
+    <section className="mentor-section-container">
       <div className="mentor-section-header">
         <h2 className="mentor-section-heading">The People Behind DOPAMINE</h2>
         <h3 className="mentor-section-sub-heading">
@@ -390,11 +299,12 @@ function MentorSection() {
           <article className="mentor-section-card" key={card.id}>
             <div className="mentor-section-card-inner">
               <div className="mentor-section-card-image">
-                <img src={card.image} alt={card.title} />
+                <img src={card.image} alt={card.title} loading="lazy" />
               </div>
               <div className="mentor-section-card-content">
                 <h3>{card.title}</h3>
-                <p className="mentor-section-card-desc">{card.description}</p>
+                <p className="mentor-section-card-desc">{card.description || card.fullContent}</p>
+                {card.description && (
                 <button
                   type="button"
                   className="mentor-section-read-more"
@@ -402,6 +312,7 @@ function MentorSection() {
                 >
                   Read more →
                 </button>
+                )}
               </div>
             </div>
           </article>
@@ -428,9 +339,6 @@ function MentorSection() {
             >
               ×
             </button>
-            <span className="mentor-section-card-label">
-              {activeCard.label}
-            </span>
             <h3 className="mentor-section-modal-title">{activeCard.title}</h3>
             <div className="mentor-section-modal-body">
               {activeCard.fullContent}
