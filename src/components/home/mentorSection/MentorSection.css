@@ -1,13 +1,12 @@
 .mentor-section-container {
   width: 100%;
-  padding: clamp(72px, 8vw, 128px) 0;
 }
 
 .mentor-section-header {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 80px 16px;
   text-align: center;
+  background: linear-gradient(135deg, #062b69 0%, #1d396d 100%);
 }
 
 .mentor-section-heading {
@@ -31,6 +30,7 @@
   font-size: 18px;
   line-height: 1.8;
   color: #ffffff;
+  max-width: 1280px;
 }
 
 /* Cards: full width, no gap between them */
@@ -40,7 +40,7 @@
   gap: 0;
   width: 100%;
   max-width: none;
-  margin: clamp(40px, 6vw, 80px) 0 0;
+  /* margin: clamp(40px, 6vw, 80px) 0 0; */
 }
 
 .mentor-section-card {
@@ -68,13 +68,13 @@
 
 /* Dark overlay so white text stays readable on any image.
    Lower the opacity or remove once your final images are in. */
-.mentor-section-card-inner::before {
+/* .mentor-section-card-inner::before {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background: rgba(2, 31, 89, 0.45);
-}
+} */
 
 .mentor-section-card:nth-child(even) .mentor-section-card-inner {
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
