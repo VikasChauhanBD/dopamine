@@ -194,7 +194,7 @@ function MentorSection() {
       image:
         "https://cdn.dribbble.com/userupload/49257896/file/4fa0a75b33442d1ffae2ef626612c231.jpeg",
       bgImage:
-        "https://cdn.dribbble.com/userupload/49355729/file/2f3e3ad5d8e379be20ee81b4387653df.jpeg",
+        "https://cdn.dribbble.com/userupload/49355728/file/abe6b3ba16c99bef224fb1f450ac67c3.jpeg",
       title: "Dr. Gobind Rai Garg",
       description: (
         <>
@@ -250,7 +250,7 @@ function MentorSection() {
       image:
         "https://cdn.dribbble.com/userupload/49258317/file/08bfa49831f127304deb84f28026585f.jpeg",
       bgImage:
-        "https://cdn.dribbble.com/userupload/49355728/file/abe6b3ba16c99bef224fb1f450ac67c3.jpeg",
+        "https://cdn.dribbble.com/userupload/49355729/file/2f3e3ad5d8e379be20ee81b4387653df.jpeg",
       title: "Dr. Apurv Mehra",
       description: (
         <>

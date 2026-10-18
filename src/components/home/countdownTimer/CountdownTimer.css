@@ -41,7 +41,6 @@
 .countdown-title {
   margin: 0;
   color: #ffa078;
-  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(25px, 3vw, 40px);
   font-weight: 800;
   line-height: 1.2;

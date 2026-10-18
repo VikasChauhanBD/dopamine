@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./CountdownTimer.css";
 
-const TARGET_DATE = "2027-09-05T00:00:00";
+const TARGET_DATE = "2026-11-14T00:00:00";
 
 function getTimeRemaining(targetDate) {
   const difference = Math.max(0, new Date(targetDate).getTime() - Date.now());
@@ -16,9 +16,9 @@ function getTimeRemaining(targetDate) {
 }
 
 function CountdownTimer({
-  title = "The Man Burns In",
+  title = "14 November 2026",
   targetDate = TARGET_DATE,
-  buttonText = "Come Home to BRC",
+  buttonText = "Register now",
   buttonLink = "/",
 }) {
   const [time, setTime] = useState(() => getTimeRemaining(targetDate));
