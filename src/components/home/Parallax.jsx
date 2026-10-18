@@ -38,7 +38,7 @@ function Parallax() {
     <main ref={homeRef} className="home-page">
       <div className="home-page__background" aria-hidden="true" />
       <div className="home-page__content">
-        <SpiralGallery />
+        {/* <SpiralGallery /> */}
         <MentorSection />
         {/* <AboutSection /> */}
         {/* <FlowingMenu /> */}

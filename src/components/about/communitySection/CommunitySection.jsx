@@ -5,9 +5,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiArrowUpRight } from "react-icons/fi";
 import "./CommunitySection.css";
 import communityPaint from "../../../assets/community-paint.png";
-import corebtrLogo from "../../../assets/images/corebtr-logo.png";
-import econceptualLogo from "../../../assets/images/econceptual-logo.png";
-import grgLogo from "../../../assets/images/grg-logo.png";
+import corebtrLogo from "../../../assets/images/corebtr-w.png";
+import econceptualLogo from "../../../assets/images/ec-w.png";
+import grgLogo from "../../../assets/images/grg-w.png";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 

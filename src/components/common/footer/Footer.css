@@ -29,22 +29,8 @@
   margin-bottom: 62px;
 }
 
-.festival-footer-logo {
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0;
-  color: #f28705;
-  text-decoration: none;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: 0.5px;
-}
-
-.festival-footer-tagline {
-  color: #f25c05;
-  font-weight: 500;
-  letter-spacing: 0.8px;
+.festival-footer-logo img {
+  width: 250px;
 }
 
 .festival-footer-navigation {

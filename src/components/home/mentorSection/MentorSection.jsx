@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./MentorSection.css";
 
+// Temporary shared background. Replace each card's bgImage with its own URL later.
+const BG_IMAGE =
+  "https://cdn.dribbble.com/userupload/49355473/file/b8b45eda0c2cb6c5e2b35644b39252a1.jpeg";
+
 function MentorSection() {
   const [activeCard, setActiveCard] = useState(null);
 
@@ -9,6 +13,8 @@ function MentorSection() {
       id: 1,
       image:
         "https://cdn.dribbble.com/userupload/49257897/file/c024d98dee96a225a17137a559671902.jpeg",
+      bgImage:
+        "https://cdn.dribbble.com/userupload/49355729/file/2f3e3ad5d8e379be20ee81b4387653df.jpeg",
       title: "Dr. Zainab Vora",
       description: (
         <>
@@ -80,6 +86,8 @@ function MentorSection() {
       id: 2,
       image:
         "https://cdn.dribbble.com/userupload/49257894/file/42c17dad43b16db8a8699feb77af5c10.jpeg",
+      bgImage:
+        "https://cdn.dribbble.com/userupload/49355727/file/c58adc4cc339be1c1946ba38002ec724.jpeg",
       title: "Dr. Ravi Sharma",
       description: (
         <>
@@ -133,7 +141,22 @@ function MentorSection() {
       id: 3,
       image:
         "https://cdn.dribbble.com/userupload/49257895/file/552c920e376be5a9a98bca4e1b403f2d.jpeg",
+      bgImage:
+        "https://cdn.dribbble.com/userupload/49355730/file/a9f5efe60072904f8ed6bbea59b6bfe4.jpeg",
       title: "Mr. Ritesh Kapoor",
+      description: (
+        <>
+          <b>Financial & Strategic Consultant | CA</b>
+          <br />
+          <br />
+          <b>Our very own Mama Ji Sir.</b>
+          <br />
+          For pretty much anything, there’s one name that comes to mind: Mama
+          Ji. Whether it’s something you need, something you’ve forgotten,
+          something that’s gone wrong, or something you simply need help
+          figuring out, you know where to go.
+        </>
+      ),
       fullContent: (
         <>
           <b>Financial & Strategic Consultant | CA</b>
@@ -170,7 +193,22 @@ function MentorSection() {
       id: 4,
       image:
         "https://cdn.dribbble.com/userupload/49257896/file/4fa0a75b33442d1ffae2ef626612c231.jpeg",
+      bgImage:
+        "https://cdn.dribbble.com/userupload/49355728/file/abe6b3ba16c99bef224fb1f450ac67c3.jpeg",
       title: "Dr. Gobind Rai Garg",
+      description: (
+        <>
+          <b>Founder of Pharmacology by GRG</b>
+          <br />
+          <br />
+          <b>“Dum bande mein hota hai, branch mein nahi.”</b>
+          <br />
+          If you’ve heard Dr. GRG say this, you know the line needs no
+          introduction. For generations of medical students, he has been the
+          name in Pharmacology. Years of teaching, concepts that finally click,
+          and a familiar voice through countless hours of preparation.
+        </>
+      ),
       fullContent: (
         <>
           <b>Founder of Pharmacology by GRG</b>
@@ -211,6 +249,8 @@ function MentorSection() {
       id: 5,
       image:
         "https://cdn.dribbble.com/userupload/49258317/file/08bfa49831f127304deb84f28026585f.jpeg",
+      bgImage:
+        "https://cdn.dribbble.com/userupload/49355729/file/2f3e3ad5d8e379be20ee81b4387653df.jpeg",
       title: "Dr. Apurv Mehra",
       description: (
         <>
@@ -297,21 +337,26 @@ function MentorSection() {
       <div className="mentor-section-cards">
         {cardsData.map((card) => (
           <article className="mentor-section-card" key={card.id}>
-            <div className="mentor-section-card-inner">
+            <div
+              className="mentor-section-card-inner"
+              style={{ backgroundImage: `url(${card.bgImage})` }}
+            >
               <div className="mentor-section-card-image">
                 <img src={card.image} alt={card.title} loading="lazy" />
               </div>
               <div className="mentor-section-card-content">
                 <h3>{card.title}</h3>
-                <p className="mentor-section-card-desc">{card.description || card.fullContent}</p>
+                <p className="mentor-section-card-desc">
+                  {card.description || card.fullContent}
+                </p>
                 {card.description && (
-                <button
-                  type="button"
-                  className="mentor-section-read-more"
-                  onClick={() => setActiveCard(card)}
-                >
-                  Read more →
-                </button>
+                  <button
+                    type="button"
+                    className="mentor-section-read-more"
+                    onClick={() => setActiveCard(card)}
+                  >
+                    Read more →
+                  </button>
                 )}
               </div>
             </div>

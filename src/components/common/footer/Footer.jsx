@@ -7,13 +7,14 @@ import {
 } from "react-icons/fa6";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import "./Footer.css";
+import logo from "../../../assets/images/logo.png";
 
 const Footer = () => {
   const navLinks = [
     { name: "Home", href: "/", active: true },
-    { name: "Registration", href: "/registration" },
     { name: "About", href: "/about" },
     { name: "Contact Us", href: "/contact" },
+    { name: "Registration", href: "/registration" },
   ];
 
   const socialLinks = [
@@ -44,8 +45,7 @@ const Footer = () => {
       <div className="festival-footer-container">
         <div className="festival-footer-brand">
           <a href="/" className="festival-footer-logo">
-            <span>DOPAMINE</span>
-            <span className="festival-footer-tagline">High On Life</span>
+            <img src={logo} alt="" />
           </a>
         </div>
 
