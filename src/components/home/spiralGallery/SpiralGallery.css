@@ -245,3 +245,39 @@
     font-size: clamp(18px, 0.94vw, 36px);
   }
 }
+
+@keyframes spiral-gradient-shift-mobile {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  25% {
+    background-position: 100% 0%;
+  }
+
+  50% {
+    background-position: 100% 100%;
+  }
+
+  75% {
+    background-position: 0% 100%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .spiral-gallery {
+    background-size: 400% 400%;
+    animation: spiral-gradient-shift-mobile 18s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spiral-gallery {
+    animation: none;
+    will-change: auto;
+  }
+}

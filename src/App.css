@@ -1,8 +1,16 @@
+@font-face {
+  font-family: "Supera Gothic";
+  src: url("./assets/fonts/SuperaGothic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Bootzy TM", sans-serif;
+  font-family: "Supera Gothic", sans-serif;
 }
 
 /* ---------- Website Palette ---------------- */
