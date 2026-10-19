@@ -40,7 +40,6 @@
   gap: 0;
   width: 100%;
   max-width: none;
-  /* margin: clamp(40px, 6vw, 80px) 0 0; */
 }
 
 .mentor-section-card {
@@ -65,16 +64,6 @@
   background-position: center;
   background-repeat: no-repeat;
 }
-
-/* Dark overlay so white text stays readable on any image.
-   Lower the opacity or remove once your final images are in. */
-/* .mentor-section-card-inner::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: rgba(2, 31, 89, 0.45);
-} */
 
 .mentor-section-card:nth-child(even) .mentor-section-card-inner {
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -266,7 +255,14 @@
     font-size: 16px;
   }
 
-  .mentor-section-card-inner,
+  .mentor-section-card-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    padding: 40px 16px;
+    border-radius: 0;
+    background-position: left center;
+  }
+
   .mentor-section-card:nth-child(even) .mentor-section-card-inner {
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;

@@ -54,14 +54,12 @@
   display: inline-block;
 }
 
-/* Intro line under the title */
 .us-intro {
   max-width: 760px;
   margin: 12px 0 0;
   font-size: 20px;
   font-weight: 400;
   line-height: 1.6;
-  color: #cfcbe6;
 }
 
 .us-divider {
@@ -151,6 +149,7 @@
 }
 
 .us-desc {
+  font-size: 18px;
   font-weight: 500;
   color: #ffffff;
 }
@@ -306,10 +305,6 @@
     font-size: 32px;
   }
 
-  .us-intro {
-    font-size: 16px;
-  }
-
   .us-name {
     flex-basis: calc(100% - 56px);
     font-size: 24px;
@@ -320,8 +315,8 @@
     padding: 20px 0;
   }
 
-  .us-meta {
-    font-size: 14px;
+  .us-desc {
+    font-size: 17px;
   }
 
   .us-arrow {
