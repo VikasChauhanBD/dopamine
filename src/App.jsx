@@ -10,9 +10,12 @@ import RegistrationPage from "./pages/RegistrationPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 
+import ScrollToTop from "./components/common/ScrollToTop";
+
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
 
       <Routes>

@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./UpcomingShows.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const CTA_LINK = "#"; // <- put the "Get To Know Dopamine" page link here
 
@@ -39,13 +42,14 @@ const SHOWS = [
   },
   {
     id: 5,
-    num: "4",
+    num: "5",
     name: "THE FLOOR IS YOURS",
     description:
       "Dr. Zainab, Dr. Ravi, Dr. GRG and Dr. Apurv come together on one stage, with students invited to sing, dance, perform, or surprise us with something entirely their own.",
     link: "#",
   },
 ];
+
 function ArrowIcon() {
   return (
     <svg
@@ -67,14 +71,37 @@ function ArrowIcon() {
 
 export default function UpcomingShows() {
   const rootRef = useRef(null);
+
   useEffect(() => {
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
 
     const ctx = gsap.context(() => {
-      // One orchestrated entrance
       if (!reduceMotion) {
+        const section = rootRef.current;
+        const bg = section.querySelector(".us-background");
+
+        // Parallax background: moves up slowly while this section scrolls
+        // through the viewport. The background is taller than the section,
+        // so it travels exactly the extra height and never shows a gap.
+        gsap.fromTo(
+          bg,
+          { y: 0 },
+          {
+            y: () => -(bg.offsetHeight - section.offsetHeight),
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: 1.5,
+              invalidateOnRefresh: true,
+            },
+          },
+        );
+
+        // One orchestrated entrance
         const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
         tl.from(".us-title-inner", { yPercent: 110, duration: 1.1 })
           .from(".us-label", { autoAlpha: 0, y: 12, duration: 0.7 }, "-=0.8")
@@ -108,6 +135,8 @@ export default function UpcomingShows() {
 
   return (
     <section className="us-section" ref={rootRef}>
+      <div className="us-background" aria-hidden="true" />
+
       <div className="us-container">
         <header className="us-header">
           <h2 className="us-title">
@@ -126,10 +155,7 @@ export default function UpcomingShows() {
         <ul className="us-list">
           {SHOWS.map((show) => (
             <li className="us-item" key={show.id}>
-              <a
-                className="us-row"
-                href={show.link}
-              >
+              <a className="us-row" href={show.link}>
                 <span className="us-fill" />
                 <span className="us-row-mask">
                   <span className="us-row-inner">
@@ -157,7 +183,6 @@ export default function UpcomingShows() {
           </a>
         </div>
       </div>
-
     </section>
   );
 }

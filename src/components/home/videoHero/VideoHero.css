@@ -178,18 +178,32 @@
   gap: 14px;
   margin-top: 30px;
   padding: 16px 30px;
-  background: #f28705;
-  color: #021f59;
-  border: 2px solid #f28705;
+
+  background: linear-gradient(
+    100deg,
+    #ff6a00,
+    #ff00cc,
+    #7b2cff,
+    #007bff,
+    #00e5ff
+  );
+  background-size: 250% 250%;
+  animation: mentor-gradient-flow 5s ease infinite;
+
+  color: #ffffff;
+  border: 2px solid transparent;
   border-radius: 50px;
   font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-decoration: none;
+
   transition:
-    background 0.3s ease,
     color 0.3s ease,
-    transform 0.3s ease;
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  box-shadow: 0 4px 18px rgba(123, 44, 255, 0.22);
 }
 
 .hero-cta span {
@@ -199,13 +213,33 @@
 }
 
 .hero-cta:hover {
-  background: transparent;
   color: #ffffff;
   transform: translateY(-3px);
+  box-shadow: 0 7px 24px rgba(123, 44, 255, 0.35);
 }
 
 .hero-cta:hover span {
   transform: translate(3px, -3px);
+}
+
+@keyframes mentor-gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta {
+    animation: none;
+  }
 }
 
 /* ------------------------ Responsive Styles ------------------- */

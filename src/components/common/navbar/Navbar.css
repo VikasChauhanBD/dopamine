@@ -78,7 +78,7 @@
   padding: 27px 0;
   color: rgba(255, 255, 255, 0.88);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 20px;
   white-space: nowrap;
@@ -119,7 +119,7 @@
   border-radius: 6px;
   background: #f25c05;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 20px;
   text-decoration: none;
@@ -182,7 +182,7 @@
     border-radius: 6px;
     background: rgba(255, 255, 255, 0.06);
     color: #ffffff;
-    font-size: 25px;
+    font-size: 24px;
     cursor: pointer;
   }
 
@@ -208,7 +208,7 @@
 
   .navbar-link {
     padding: 15px 0;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .navbar-link::after {
@@ -231,7 +231,7 @@
     border-radius: 6px;
     background: #f25c05;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     text-decoration: none;
   }

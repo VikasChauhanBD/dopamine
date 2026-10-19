@@ -10,6 +10,16 @@
   margin: 0 auto;
 }
 
+/* Keep content inside its grid tracks at narrow viewport widths. */
+.community-section__header > *,
+.community-section__content,
+.community-section__visual,
+.community-section__navigation a {
+  min-width: 0;
+}
+
+/* ---------------------------------- Header ---------------------------------- */
+
 .community-section__header {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
@@ -55,7 +65,10 @@
   margin-top: 24px;
   font-size: 18px;
   line-height: 1.8;
+  overflow-wrap: break-word;
 }
+
+/* -------------------------------- Navigation -------------------------------- */
 
 .community-section__navigation {
   display: grid;
@@ -69,12 +82,14 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  min-height: 52px;
   padding: 14px 12px;
   color: #021f59;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .community-section__nav-number {
@@ -98,6 +113,8 @@
   outline: 2px solid #f28705;
   outline-offset: -2px;
 }
+
+/* ---------------------------------- Cards ----------------------------------- */
 
 .community-section__platforms {
   display: grid;
@@ -136,43 +153,58 @@
   grid-row: 1;
 }
 
+/* ---------------------------------- Visual ---------------------------------- */
+
 .community-section__visual {
   padding: 10px;
   border-radius: 20px;
   background: rgba(3, 90, 166, 0.06);
 }
 
-.community-section__card:nth-child(2) .community-section__visual,
-.community-section__card:nth-child(3) .community-section__visual {
-  width: 100%;
-  justify-self: center;
-}
-
-.community-section__card:nth-child(2) .community-section__visual {
-  max-width: 272px;
-}
-
-.community-section__card:nth-child(3) .community-section__visual {
-  max-width: 312px;
+.community-section__card:last-child .community-section__visual {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .community-section__platform-image {
   display: block;
   width: 100%;
   border-radius: 12px;
-  background: #fff;
-}
-
-.community-section__platform-image--logo {
-  aspect-ratio: 2 / 1;
-  object-fit: contain;
-  padding: 24px;
 }
 
 .community-section__platform-image--photo {
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+/*
+  Logo cards: the #021f59 panel stretches to the height of the content
+  next to it. The logo is absolutely positioned inside the panel, so it
+  fills the available space without making the row taller itself.
+*/
+.community-section__visual.community-section__visual--logo {
+  --logo-pad: 36px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  max-width: 480px;
+  min-height: 220px;
+  padding: 0;
+  border-radius: 24px;
+  background: #021f59;
+}
+
+.community-section__visual--logo .community-section__platform-image--logo {
+  position: absolute;
+  top: var(--logo-pad);
+  left: var(--logo-pad);
+  width: calc(100% - var(--logo-pad) * 2);
+  height: calc(100% - var(--logo-pad) * 2);
+  border-radius: 0;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* ---------------------------------- Content --------------------------------- */
 
 .community-section__identity h3 {
   font-size: 28px;
@@ -198,8 +230,13 @@
   line-height: 1.6;
 }
 
+.community-section__card:last-child .community-section__subtitle {
+  color: #ffffff;
+}
+
 .community-section__story {
   margin-top: 24px;
+  overflow-wrap: break-word;
 }
 
 .community-section__story p {
@@ -222,29 +259,39 @@
   font-weight: 600;
   line-height: 1.4;
   text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
-.community-section__card:last-child .community-section__visual {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.community-section__card:last-child .community-section__subtitle {
-  color: #ffffff;
-}
+/* -------------------------------- Responsive Styles ------------------------------ */
 
 @media (max-width: 1100px) {
-  .community-section__header {
-    gap: 40px;
+  .community-section__header h2 {
+    font-size: 38px;
   }
-  .community-section__card {
-    gap: 32px;
+
+  .community-section__navigation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
   .community-section__navigation a {
     padding: 12px 10px;
     gap: 8px;
   }
+
   .community-section__card:last-child {
     padding: 24px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+  .community-section__card,
+  .community-section__card:nth-child(even) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .community-section__visual.community-section__visual--logo {
+    --logo-pad: 28px;
   }
 }
 
@@ -252,208 +299,111 @@
   .community-section {
     padding: 48px 6%;
   }
+
   .community-section__header {
     grid-template-columns: 1fr;
     gap: 28px;
   }
-  .community-section__header h2 {
-    font-size: 38px;
-  }
+
   .community-section__tagline,
   .community-section__identity h3,
   .community-section__closing {
     font-size: 24px;
   }
+
   .community-section__intro,
   .community-section__story p,
   .community-section__subtitle {
     font-size: 16px;
   }
+
   .community-section__navigation {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-bottom: 24px;
   }
+
   .community-section__card,
   .community-section__card:nth-child(even) {
     grid-template-columns: 1fr;
     gap: 24px;
     padding-bottom: 24px;
+    scroll-margin-top: 160px;
   }
+
   .community-section__card:nth-child(even) .community-section__visual,
   .community-section__card:nth-child(even) .community-section__content {
     grid-column: auto;
     grid-row: auto;
   }
+
   .community-section__visual {
     max-width: 560px;
     width: 100%;
     margin: auto;
   }
+
+  .community-section__visual.community-section__visual--logo {
+    --logo-pad: clamp(16px, 5vw, 32px);
+    align-self: auto;
+    max-width: 480px;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+  }
 }
 
 @media (max-width: 500px) {
   .community-section {
-    padding: 36px 20px;
+    padding: 40px 16px;
   }
+
+  .community-section__header {
+    gap: 24px;
+  }
+
   .community-section__header h2 {
-    font-size: 32px;
+    font-size: clamp(26px, 7vw, 32px);
   }
+
+  .community-section__eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .community-section__tagline,
+  .community-section__identity h3,
+  .community-section__closing {
+    font-size: 22px;
+  }
+
   .community-section__navigation a {
+    padding: 12px 8px;
+    gap: 6px;
     font-size: 12px;
   }
+
   .community-section__navigation a svg {
     width: 14px;
   }
+
   .community-section__nav-number {
     display: none;
   }
-  .community-section__visual {
-    padding: 10px;
-  }
+
   .community-section__card:last-child {
-    padding: 20px;
-    margin-inline: 0;
+    padding: 20px 16px;
   }
+
+  .community-section__story {
+    margin-top: 20px;
+  }
+
   .community-section__quote {
-    padding-left: 18px;
+    margin-top: 22px;
+    padding-left: 14px;
   }
-}
-
-.community-section__visual.community-section__visual--logo {
-  position: relative;
-  isolation: isolate;
-  display: grid;
-  place-items: center;
-  width: 100%;
-  max-width: 480px;
-  min-height: 0;
-  aspect-ratio: 5 / 4;
-  padding: 36px;
-  background: transparent;
-}
-
-.community-section__paint {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  object-fit: contain;
-}
-
-.community-section__card:nth-child(even) .community-section__paint {
-  object-fit: contain;
-}
-
-.community-section__visual--logo .community-section__platform-image--logo {
-  position: relative;
-  z-index: 1;
-  width: 82%;
-  height: auto;
-  max-height: 190px;
-  aspect-ratio: auto;
-  object-fit: contain;
-  padding: 16px;
-  background: transparent;
-  border-radius: 12px;
-  mix-blend-mode: normal;
-  box-shadow: none;
-}
-
-@media (max-width: 500px) {
-  .community-section__visual.community-section__visual--logo {
-    min-height: 0;
-    padding: 24px;
-  }
-}
-
-/* Give the eConceptual and GRG marks more room over the paint. */
-.community-section__card:nth-child(2) .community-section__visual--logo,
-.community-section__card:nth-child(3) .community-section__visual--logo {
-  padding: 20px;
-  max-width: 480px;
-  min-height: 0;
-  aspect-ratio: 3 / 2;
-}
-
-.community-section__card:nth-child(2) .community-section__paint,
-.community-section__card:nth-child(3) .community-section__paint {
-  object-fit: contain;
-}
-
-.community-section__card:nth-child(2) .community-section__platform-image--logo,
-.community-section__card:nth-child(3) .community-section__platform-image--logo {
-  width: 70%;
-  max-height: 180px;
-  padding: 12px;
-  mix-blend-mode: normal;
-}
-
-/* Keep content inside its grid tracks at narrow viewport widths. */
-.community-section__header > *,
-.community-section__content,
-.community-section__visual,
-.community-section__navigation a {
-  min-width: 0;
-}
-
-.community-section__navigation a {
-  overflow-wrap: anywhere;
-  min-height: 52px;
-}
-
-.community-section__intro,
-.community-section__story,
-.community-section__closing {
-  overflow-wrap: break-word;
-}
-
-@media (min-width: 901px) and (max-width: 1100px) {
-  .community-section__header h2 { font-size: 38px; }
-  .community-section__navigation { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .community-section__card,
-  .community-section__card:nth-child(even) {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
-}
-
-@media (max-width: 900px) {
-  .community-section__visual.community-section__visual--logo,
-  .community-section__card:nth-child(2) .community-section__visual--logo,
-  .community-section__card:nth-child(3) .community-section__visual--logo {
-    width: 100%;
-    max-width: 480px;
-    min-height: 0;
-    aspect-ratio: 3 / 2;
-    padding: clamp(12px, 4vw, 24px);
-    margin-inline: auto;
-  }
-  .community-section__card { scroll-margin-top: 160px; }
-}
-
-@media (max-width: 500px) {
-  .community-section { padding: 40px 16px; }
-  .community-section__header h2 { font-size: clamp(26px, 7vw, 32px); }
-  .community-section__header { gap: 24px; }
-  .community-section__eyebrow { font-size: 12px; letter-spacing: 0.08em; }
-  .community-section__tagline,
-  .community-section__identity h3,
-  .community-section__closing { font-size: 22px; }
-  .community-section__navigation a { padding: 12px 8px; gap: 6px; }
-  .community-section__card:last-child { padding: 20px 16px; }
-  .community-section__story { margin-top: 20px; }
-  .community-section__quote { margin-top: 22px; padding-left: 14px; }
 }
 
 @media (max-width: 360px) {
-  .community-section__navigation { grid-template-columns: minmax(0, 1fr); }
-}
-
-@media (max-width: 500px) {
-  .community-section__visual--logo .community-section__platform-image--logo {
-    max-height: 140px;
-    padding: 10px;
+  .community-section__navigation {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

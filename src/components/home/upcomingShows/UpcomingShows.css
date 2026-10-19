@@ -1,5 +1,6 @@
 .us-section {
   position: relative;
+  isolation: isolate; /* keeps the parallax background inside this section */
   width: 100%;
   padding: 110px 24px 120px;
   background: #000000;
@@ -8,8 +9,25 @@
   box-sizing: border-box;
 }
 
+/* Parallax background image (moved by GSAP ScrollTrigger) */
+.us-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140%; /* taller than the section so it can travel without gaps */
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("https://d3vhc53cl8e8km.cloudfront.net/hello-staging/wp-content/uploads/sites/126/2025/03/21214514/unity_2025_mk_misc_website_backgrounds_1920x1080_r02v05-dark2-scaled.jpg");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  will-change: transform;
+}
+
 .us-container {
   position: relative;
+  z-index: 1;
   max-width: 1260px;
   margin: 0 auto;
 }
@@ -183,6 +201,7 @@
 }
 
 /* "Get To Know Dopamine" button */
+
 .us-cta {
   margin-top: 56px;
 }
@@ -190,22 +209,44 @@
 .us-cta-link {
   display: inline-block;
   padding: 16px 34px;
-  border: 2px solid #f28705;
+  border: 2px solid transparent;
   border-radius: 999px;
-  color: #f28705;
+
+  background: linear-gradient(
+    100deg,
+    #ff6a00,
+    #ff00cc,
+    #7b2cff,
+    #007bff,
+    #00e5ff
+  );
+  background-size: 250% 250%;
+  animation: mentor-gradient-flow 5s ease infinite;
+
+  color: #ffffff;
   font-size: 18px;
   font-weight: 700;
   text-decoration: none;
+
+  box-shadow: 0 4px 18px rgba(123, 44, 255, 0.22);
+
   transition:
-    background 0.35s ease,
-    color 0.35s ease;
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .us-cta-link:hover,
 .us-cta-link:focus-visible {
-  background: #f28705;
-  color: #000000;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 7px 24px rgba(123, 44, 255, 0.35);
   outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .us-cta-link {
+    animation: none;
+  }
 }
 
 /* ---------------------------------- Responsive ------------------------- */
@@ -306,9 +347,7 @@
     padding: 14px 26px;
     font-size: 16px;
   }
-
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   .us-arrow,
@@ -320,7 +359,9 @@
 .us-name,
 .us-fill,
 .us-arrow-icon {
-  transition: color 200ms ease, transform 200ms ease;
+  transition:
+    color 200ms ease,
+    transform 200ms ease;
 }
 
 .us-row:hover .us-name,

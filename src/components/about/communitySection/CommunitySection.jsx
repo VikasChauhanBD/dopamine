@@ -4,7 +4,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiArrowUpRight } from "react-icons/fi";
 import "./CommunitySection.css";
-import communityPaint from "../../../assets/community-paint.png";
 import corebtrLogo from "../../../assets/images/corebtr-w.png";
 import econceptualLogo from "../../../assets/images/ec-w.png";
 import grgLogo from "../../../assets/images/grg-w.png";
@@ -196,15 +195,6 @@ function CommunitySection() {
               <div
                 className={`community-section__visual${platform.imageType === "logo" ? " community-section__visual--logo" : ""}`}
               >
-                {platform.imageType === "logo" && (
-                  <img
-                    className="community-section__paint"
-                    src={communityPaint}
-                    alt=""
-                    aria-hidden="true"
-                    loading="lazy"
-                  />
-                )}
                 <img
                   className={`community-section__platform-image community-section__platform-image--${platform.imageType}`}
                   src={platform.image}

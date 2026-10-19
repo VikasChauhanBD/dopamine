@@ -8,7 +8,39 @@
   min-height: 100vh;
   padding: 64px 5%;
   color: #fff;
+  background: linear-gradient(
+    135deg,
+    #ff6a00,
+    #ff00cc,
+    #7b2cff,
+    #007bff,
+    #007bff,
+    #7b2cff,
+    #ff00cc,
+    #f28705,
+    #f25c05
+  );
+  background-size: 300% 300%;
+  animation: spiral-gradient-shift 14s ease-in-out infinite;
   overflow: hidden;
+}
+
+@keyframes spiral-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spiral-gallery {
+    animation: none;
+  }
 }
 
 .spiral-webgl-container {
@@ -35,6 +67,7 @@
   max-width: 700px;
   text-align: right;
   pointer-events: none;
+  color: #ffffff;
 }
 
 .spiral-heading {
@@ -42,13 +75,13 @@
   font-weight: 600;
   line-height: 1.08;
   text-transform: uppercase;
-  color: #f28705;
+  /* color: #f28705; */
 }
 
 .spiral-sub-heading {
   position: relative;
   width: 100%;
-  color: #f25c05;
+  /* color: #f25c05; */
   font-size: 28px;
   font-weight: 600;
   line-height: 1.2;
@@ -59,34 +92,79 @@
   margin: 0;
   font-size: 18px;
   line-height: 1.7;
-  color: #ffffff;
 }
 
 /* -------------------------------- Responsive Styles ------------------------------ */
 
 @media (max-width: 1440px) {
-  .spiral-content { max-width: 520px; }
+  .spiral-content {
+    max-width: 520px;
+  }
 }
 
 @media (max-width: 1100px) {
-  .spiral-heading { font-size: 38px; }
-  .spiral-sub-heading { font-size: 24px; }
-  .spiral-description { font-size: 16px; }
+  .spiral-heading {
+    font-size: 38px;
+  }
+  .spiral-sub-heading {
+    font-size: 24px;
+  }
+  .spiral-description {
+    font-size: 16px;
+  }
 }
 
+/* Tablet + mobile: images first, content below (no overlap) */
 @media (max-width: 900px) {
   .spiral-gallery {
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    min-height: 0;
     padding: 0;
+  }
+
+  .spiral-webgl-container {
+    position: relative;
+    inset: auto;
+    flex: 0 0 auto;
+    width: 100%;
+    height: clamp(420px, 70vh, 640px);
   }
 
   .spiral-content {
     width: 100%;
     max-width: none;
-    padding: 64px 24px;
+    padding: 40px 24px 64px;
     margin-top: 0;
     text-align: left;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.5));
+    background: none;
+    pointer-events: auto;
+  }
+
+  /* In fullscreen, show only the spiral */
+  .spiral-gallery:fullscreen {
+    justify-content: center;
+  }
+
+  .spiral-gallery:fullscreen .spiral-webgl-container {
+    height: 100vh;
+  }
+
+  .spiral-gallery:fullscreen .spiral-content {
+    display: none;
+  }
+
+  .spiral-gallery:-webkit-full-screen {
+    justify-content: center;
+  }
+
+  .spiral-gallery:-webkit-full-screen .spiral-webgl-container {
+    height: 100vh;
+  }
+
+  .spiral-gallery:-webkit-full-screen .spiral-content {
+    display: none;
   }
 }
 
@@ -141,8 +219,12 @@
 }
 
 @media (max-width: 500px) {
-  .spiral-heading { font-size: 32px; }
-  .spiral-sub-heading { font-size: 22px; }
+  .spiral-heading {
+    font-size: 32px;
+  }
+  .spiral-sub-heading {
+    font-size: 22px;
+  }
 }
 
 @media (min-width: 1920px) {

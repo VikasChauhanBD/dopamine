@@ -39,12 +39,12 @@ function Parallax() {
       <div className="home-page__background" aria-hidden="true" />
       <div className="home-page__content">
         {/* <SpiralGallery /> */}
-        <MentorSection />
+        {/* <MentorSection /> */}
         {/* <AboutSection /> */}
         {/* <FlowingMenu /> */}
         <UpcomingShows />
         {/* <Registration /> */}
-        <SillyString />
+        {/* <SillyString /> */}
       </div>
     </main>
   );

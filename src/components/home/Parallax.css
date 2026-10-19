@@ -1,4 +1,4 @@
-.home-page {
+/* .home-page {
   position: relative;
   isolation: isolate;
   width: 100%;
@@ -28,15 +28,14 @@
   z-index: 1;
 }
 
-/* Keep sections transparent to reveal the shared background */
 .home-page__content > section {
   background-color: transparent;
-}
+} */
 
 /* -------------------------------- Responsive Styles ------------------------------ */
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .home-page__background {
     width: 100%;
   }
-}
+} */

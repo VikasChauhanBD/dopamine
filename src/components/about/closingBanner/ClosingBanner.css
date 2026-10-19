@@ -50,29 +50,55 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 100%;
-  min-height: 52px;
+  width: fit-content;
+  margin: auto;
   padding: 14px 24px;
-  border: 2px solid #f28705;
+  border: 2px solid transparent;
   border-radius: 8px;
-  background: #f28705;
-  color: #0266ba;
+
+  background: linear-gradient(
+    100deg,
+    #ff6a00,
+    #ff00cc,
+    #7b2cff,
+    #007bff,
+    #00e5ff
+  );
+  background-size: 250% 250%;
+  animation: mentor-gradient-flow 5s ease infinite;
+
+  color: #ffffff;
   font-size: 16px;
   font-weight: 600;
   line-height: 1.5;
   text-decoration: none;
   text-transform: uppercase;
+
+  box-shadow: 0 4px 18px rgba(123, 44, 255, 0.22);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .closing-banner__cta:hover {
-  background: #ffffff;
-  border-color: #ffffff;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 24px rgba(123, 44, 255, 0.35);
 }
 
 .closing-banner__cta:focus-visible {
   outline: 2px solid #ffffff;
   outline-offset: 4px;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .closing-banner__cta {
+    animation: none;
+  }
+}
+
+/* -------------------------------- Responsive Styles ------------------------------ */
 
 @media (max-width: 900px) {
   .closing-banner {

@@ -501,7 +501,9 @@ const SpiralGallery = () => {
       spiralMesh.position.x = compact ? 0 : -3.5;
       scene.updateMatrixWorld(true);
       // Center the rendered, tilted geometry rather than its local origin.
-      const center = new THREE.Box3().setFromObject(spiralMesh).getCenter(new THREE.Vector3());
+      const center = new THREE.Box3()
+        .setFromObject(spiralMesh)
+        .getCenter(new THREE.Vector3());
       const x = compact ? center.x : 0;
       const y = compact ? center.y : 3.5 / zoomLevel;
       camera.position.set(x, y, 9 / zoomLevel);
@@ -528,12 +530,15 @@ const SpiralGallery = () => {
       const { w, h } = getSize();
 
       scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x000000);
 
       camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 1000);
       camera.position.set(0, 3.5, 9);
 
-      renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+      renderer = new THREE.WebGLRenderer({
+        canvas,
+        antialias: true,
+        alpha: true,
+      });
       renderer.setSize(w, h, false);
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.6));

@@ -1,13 +1,13 @@
 .countdown-section {
   position: relative;
   width: 100%;
-  padding: 30px 24px;
+  padding: 60px 20px;
   overflow: hidden;
   background-color: #111111;
   background-image: repeating-conic-gradient(
     from 0deg at 50% 50%,
     #000000 0deg 15deg,
-    #171717 15deg 30deg,
+    #262626 15deg 30deg,
     #000000 30deg 45deg
   );
   background-size: 100px 100px;
@@ -25,7 +25,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  background: #292929;
+  background: #262626;
   box-sizing: border-box;
 }
 
@@ -40,7 +40,7 @@
 
 .countdown-title {
   margin: 0;
-  color: #ffa078;
+  color: #f28705;
   font-size: clamp(25px, 3vw, 40px);
   font-weight: 800;
   line-height: 1.2;
@@ -63,7 +63,7 @@
 }
 
 .countdown-number {
-  color: #ffa078;
+  color: #f28705;
   font-size: clamp(27px, 3vw, 40px);
   font-weight: 800;
   line-height: 1.1;
@@ -97,22 +97,42 @@
   padding: 12px 24px;
   border: none;
   border-radius: 7px;
-  background: #ffa078;
-  color: #111111;
+
+  background: linear-gradient(
+    100deg,
+    #ff6a00,
+    #ff00cc,
+    #7b2cff,
+    #007bff,
+    #00e5ff
+  );
+  background-size: 250% 250%;
+  animation: mentor-gradient-flow 5s ease infinite;
+
+  color: #ffffff;
   font-size: 16px;
   font-weight: 700;
   line-height: 1.4;
   text-decoration: none;
   text-align: center;
+
+  box-shadow: 0 4px 18px rgba(123, 44, 255, 0.22);
+
   transition:
-    background-color 200ms ease,
-    transform 200ms ease;
+    transform 200ms ease,
+    box-shadow 200ms ease;
 }
 
 .countdown-button:hover {
-  background: #ffb18f;
-  color: #111111;
+  color: #ffffff;
   transform: translateY(-2px);
+  box-shadow: 0 7px 24px rgba(123, 44, 255, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .countdown-button {
+    animation: none;
+  }
 }
 
 .countdown-button:focus-visible {
@@ -122,7 +142,7 @@
 
 .countdown-completed {
   margin: 0;
-  color: #ffa078;
+  color: #f28705;
   font-size: 20px;
   font-weight: 700;
   text-align: center;
@@ -132,8 +152,8 @@
 
 @media (max-width: 900px) {
   .countdown-section {
-    padding: 24px 18px;
-    background-size: 75px 75px;
+    padding: 40px 16px;
+    background-size: 80px 80px;
   }
 
   .countdown-container {
@@ -156,8 +176,7 @@
 
 @media (max-width: 500px) {
   .countdown-section {
-    padding: 18px 12px;
-    background-size: 55px 55px;
+    background-size: 60px 60px;
   }
 
   .countdown-container {
