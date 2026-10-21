@@ -62,7 +62,7 @@
   min-height: 100%;
   width: auto;
   height: auto;
-  object-fit: cover;
+  object-fit: fill;
   border: none;
   pointer-events: none;
 }
@@ -89,7 +89,7 @@
   background: linear-gradient(
     180deg,
     rgba(2, 31, 89, 0.55) 0%,
-    rgba(0, 0, 0, 0.75) 100%
+    rgba(0, 0, 0, 0.4) 100%
   );
   z-index: 2;
 }

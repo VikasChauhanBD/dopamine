@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./VideoHero.css";
 import gsap from "gsap";
+import heroVideo from "../../../assets/videos/hero_video.mp4";
 import { useGSAP } from "@gsap/react";
 
 function VideoHero() {
@@ -99,7 +100,7 @@ function VideoHero() {
           preload="auto"
         >
           <source
-            src="https://cdn.dribbble.com/userupload/49255045/file/b53fa6e9499e5f19af4a9d2be1315613.mp4"
+            src={heroVideo}
             type="video/mp4"
           />
         </video>

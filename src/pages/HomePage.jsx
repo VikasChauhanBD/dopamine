@@ -1,5 +1,5 @@
 import React from "react";
-import DopamineHero from "../components/home/dopamineHero/DopamineHero";
+// import DopamineHero from "../components/home/dopamineHero/DopamineHero";
 import VideoHero from "../components/home/videoHero/VideoHero";
 import CountdownTimer from "../components/home/countdownTimer/CountdownTimer";
 import Marquee from "../components/home/marquee/Marquee";
@@ -13,8 +13,8 @@ import SillyString from "../components/home/sillyString/SillyString";
 function HomePage() {
   return (
     <div>
-      <DopamineHero />
-      {/* <VideoHero /> */}
+      {/* <DopamineHero /> */}
+      <VideoHero />
       {/* <Marquee /> */}
       <SpiralGallery />
       <MentorSection />
