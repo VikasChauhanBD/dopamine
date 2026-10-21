@@ -14,7 +14,7 @@ function MentorSection() {
       image:
         "https://cdn.dribbble.com/userupload/49257897/file/c024d98dee96a225a17137a559671902.jpeg",
       bgImage:
-        "https://cdn.dribbble.com/userupload/49355727/file/c58adc4cc339be1c1946ba38002ec724.jpeg",
+        "https://cdn.dribbble.com/userupload/49387331/file/f8b41f882f857e3b4835f07aada2bc9b.jpeg",
       title: "Dr. Zainab Vora",
       description: (
         <>
@@ -87,7 +87,7 @@ function MentorSection() {
       image:
         "https://cdn.dribbble.com/userupload/49257894/file/42c17dad43b16db8a8699feb77af5c10.jpeg",
       bgImage:
-        "https://cdn.dribbble.com/userupload/49355730/file/a9f5efe60072904f8ed6bbea59b6bfe4.jpeg",
+        "https://cdn.dribbble.com/userupload/49387329/file/f50486ecf62dd71250db413b648fdc3c.jpeg",
       title: "Dr. Ravi Sharma",
       description: (
         <>
@@ -142,7 +142,7 @@ function MentorSection() {
       image:
         "https://cdn.dribbble.com/userupload/49257895/file/552c920e376be5a9a98bca4e1b403f2d.jpeg",
       bgImage:
-        "https://cdn.dribbble.com/userupload/49355768/file/47198e936a1c58035a49a178b0998af7.jpeg",
+        "https://cdn.dribbble.com/userupload/49387330/file/0f6144e8f2558bdb0e0ed5db0c5ae82f.jpeg",
       title: "Mr. Ritesh Kapoor",
       description: (
         <>
@@ -194,7 +194,7 @@ function MentorSection() {
       image:
         "https://cdn.dribbble.com/userupload/49257896/file/4fa0a75b33442d1ffae2ef626612c231.jpeg",
       bgImage:
-        "https://cdn.dribbble.com/userupload/49355728/file/abe6b3ba16c99bef224fb1f450ac67c3.jpeg",
+        "https://cdn.dribbble.com/userupload/49387327/file/55b41e383eec2f67979ae8fbe317fdfd.jpeg",
       title: "Dr. Gobind Rai Garg",
       description: (
         <>
@@ -250,7 +250,7 @@ function MentorSection() {
       image:
         "https://cdn.dribbble.com/userupload/49258317/file/08bfa49831f127304deb84f28026585f.jpeg",
       bgImage:
-        "https://cdn.dribbble.com/userupload/49355729/file/2f3e3ad5d8e379be20ee81b4387653df.jpeg",
+        "https://cdn.dribbble.com/userupload/49387328/file/ed1eb7465d77381c5e257aac821cd08c.jpeg",
       title: "Dr. Apurv Mehra",
       description: (
         <>
