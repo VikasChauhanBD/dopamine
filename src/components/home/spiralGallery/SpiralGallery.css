@@ -8,37 +8,72 @@
   min-height: 100vh;
   padding: 64px 5%;
   color: #fff;
-  background: linear-gradient(
-    135deg,
-    #ff6a00,
-    #ff00cc,
-    #7b2cff,
-    #007bff,
-    #007bff,
-    #7b2cff,
-    #ff00cc,
-    #f28705,
-    #f25c05
-  );
-  background-size: 300% 300%;
-  animation: spiral-gradient-shift 14s ease-in-out infinite;
+  background-color: #06142f;
   overflow: hidden;
 }
 
-@keyframes spiral-gradient-shift {
-  0% {
-    background-position: 0% 50%;
+.spiral-gallery::before,
+.spiral-gallery::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.spiral-gallery::before {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(99, 157, 239, 0.3), transparent 55%),
+    repeating-linear-gradient(
+      96deg,
+      #081b43 0%,
+      #16396e 9%,
+      #3765a5 14%,
+      #204780 19%,
+      #102950 27%,
+      #28548f 35%,
+      #122e5a 44%
+    );
+  filter: blur(18px);
+  animation: spiral-silk-flow 18s ease-in-out infinite alternate;
+}
+
+.spiral-gallery::after {
+  background-image:
+    radial-gradient(ellipse at 5% 35%, transparent 49%, rgba(139, 190, 255, 0.23) 50%, transparent 51%),
+    radial-gradient(ellipse at 85% 30%, transparent 48%, rgba(139, 190, 255, 0.18) 49%, transparent 50%),
+    radial-gradient(ellipse at 45% 70%, transparent 49%, rgba(139, 190, 255, 0.14) 50%, transparent 52%);
+  background-size: 38% 180%, 45% 200%, 55% 170%;
+  background-position: 0% 35%, 100% 50%, 50% 70%;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  opacity: 0.7;
+  animation: spiral-silk-ripples 14s ease-in-out infinite alternate;
+}
+
+@keyframes spiral-silk-flow {
+  from {
+    transform: translate3d(-4%, -2%, 0) skewX(-5deg) scale(1.05);
   }
-  50% {
-    background-position: 100% 50%;
+  to {
+    transform: translate3d(4%, 2%, 0) skewX(5deg) scale(1.12);
   }
-  100% {
-    background-position: 0% 50%;
+}
+
+@keyframes spiral-silk-ripples {
+  from {
+    transform: translate3d(-3%, -3%, 0) skewX(4deg);
+    opacity: 0.45;
+  }
+  to {
+    transform: translate3d(3%, 3%, 0) skewX(-4deg);
+    opacity: 0.8;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .spiral-gallery {
+  .spiral-gallery::before,
+  .spiral-gallery::after {
     animation: none;
   }
 }
@@ -243,41 +278,5 @@
 
   .spiral-description {
     font-size: clamp(18px, 0.94vw, 36px);
-  }
-}
-
-@keyframes spiral-gradient-shift-mobile {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  25% {
-    background-position: 100% 0%;
-  }
-
-  50% {
-    background-position: 100% 100%;
-  }
-
-  75% {
-    background-position: 0% 100%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@media (max-width: 500px) {
-  .spiral-gallery {
-    background-size: 400% 400%;
-    animation: spiral-gradient-shift-mobile 18s ease-in-out infinite;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .spiral-gallery {
-    animation: none;
-    will-change: auto;
   }
 }
