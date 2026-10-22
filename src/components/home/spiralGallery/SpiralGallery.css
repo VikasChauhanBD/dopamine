@@ -8,73 +8,85 @@
   min-height: 100vh;
   padding: 64px 5%;
   color: #fff;
-  background-color: #06142f;
+  background: linear-gradient(125deg, #5411b8, #280ba3 55%, #4011d0);
   overflow: hidden;
 }
 
-.spiral-gallery::before,
-.spiral-gallery::after {
-  content: "";
+.spiral-fluid-background {
   position: absolute;
-  inset: -20%;
+  inset: 0;
   z-index: -1;
+  overflow: hidden;
   pointer-events: none;
 }
 
-.spiral-gallery::before {
-  background:
-    radial-gradient(ellipse at 50% 0%, rgba(99, 157, 239, 0.3), transparent 55%),
-    repeating-linear-gradient(
-      96deg,
-      #081b43 0%,
-      #16396e 9%,
-      #3765a5 14%,
-      #204780 19%,
-      #102950 27%,
-      #28548f 35%,
-      #122e5a 44%
-    );
-  filter: blur(18px);
-  animation: spiral-silk-flow 18s ease-in-out infinite alternate;
+.spiral-fluid-shape {
+  position: absolute;
+  border-radius: 42% 58% 61% 39% / 44% 43% 57% 56%;
+  animation: spiral-fluid-drift 18s ease-in-out infinite alternate;
+  will-change: transform, border-radius;
 }
 
-.spiral-gallery::after {
-  background-image:
-    radial-gradient(ellipse at 5% 35%, transparent 49%, rgba(139, 190, 255, 0.23) 50%, transparent 51%),
-    radial-gradient(ellipse at 85% 30%, transparent 48%, rgba(139, 190, 255, 0.18) 49%, transparent 50%),
-    radial-gradient(ellipse at 45% 70%, transparent 49%, rgba(139, 190, 255, 0.14) 50%, transparent 52%);
-  background-size: 38% 180%, 45% 200%, 55% 170%;
-  background-position: 0% 35%, 100% 50%, 50% 70%;
-  background-repeat: no-repeat;
-  filter: blur(3px);
-  opacity: 0.7;
-  animation: spiral-silk-ripples 14s ease-in-out infinite alternate;
+.spiral-fluid-left {
+  width: 48%;
+  height: 80%;
+  left: -22%;
+  top: -20%;
+  transform: rotate(-28deg);
+  background: linear-gradient(145deg, #3510a2 20%, #961def 65%, #f047f4);
+  box-shadow: 20px 18px 0 #9e20e855, 34px 28px 60px #f037ec66,
+    inset -14px -18px 26px #fb65ee88;
 }
 
-@keyframes spiral-silk-flow {
+.spiral-fluid-top {
+  width: 35%;
+  height: 57%;
+  left: 38%;
+  top: -39%;
+  background: linear-gradient(160deg, #2910a4 25%, #6524ce 75%, #ef29eb);
+  box-shadow: 14px 16px 0 #8921dd88, 0 22px 40px #c921f04d,
+    inset -6px -14px 18px #ff4cef99;
+  animation-delay: -7s;
+}
+
+.spiral-fluid-right {
+  width: 38%;
+  height: 100%;
+  right: -23%;
+  top: -20%;
+  background: linear-gradient(165deg, #4bf4ea, #317de8 38%, #7528e7 80%);
+  box-shadow: -18px 12px 0 #7b40f04d, -30px 0 70px #39c6f566;
+  animation-delay: -12s;
+}
+
+.spiral-fluid-bottom {
+  width: 120%;
+  height: 65%;
+  left: -10%;
+  bottom: -44%;
+  border-radius: 35% 65% 0 0 / 60% 90% 0 0;
+  background: linear-gradient(115deg, #ea40e9, #9037ed 36%, #5421db 75%);
+  box-shadow: 0 -20px 0 #a43af044, 0 -45px 0 #8830e833,
+    inset 0 18px 32px #d75aff66;
+  animation-delay: -4s;
+}
+
+@keyframes spiral-fluid-drift {
   from {
-    transform: translate3d(-4%, -2%, 0) skewX(-5deg) scale(1.05);
+    translate: -2% -2%;
+    rotate: -5deg;
   }
   to {
-    transform: translate3d(4%, 2%, 0) skewX(5deg) scale(1.12);
-  }
-}
-
-@keyframes spiral-silk-ripples {
-  from {
-    transform: translate3d(-3%, -3%, 0) skewX(4deg);
-    opacity: 0.45;
-  }
-  to {
-    transform: translate3d(3%, 3%, 0) skewX(-4deg);
-    opacity: 0.8;
+    translate: 4% 5%;
+    rotate: 7deg;
+    border-radius: 56% 44% 38% 62% / 53% 62% 38% 47%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .spiral-gallery::before,
-  .spiral-gallery::after {
+  .spiral-fluid-shape {
     animation: none;
+    will-change: auto;
   }
 }
 
@@ -102,7 +114,7 @@
   max-width: 700px;
   text-align: right;
   pointer-events: none;
-  color: #ffffff;
+  color: var(--neutral-white);
 }
 
 .spiral-heading {

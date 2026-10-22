@@ -1,7 +1,16 @@
+/* Use installed Aeonik for preview until webfont files are supplied. */
 @font-face {
-  font-family: "Supera Gothic";
-  src: url("./assets/fonts/SuperaGothic.woff2") format("woff2");
-  font-weight: 100 900;
+  font-family: "Aeonik";
+  src: local("Aeonik Regular"), local("Aeonik-Regular"), local("Aeonik");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Linotte";
+  src: url("./assets/fonts/Linotte-SemiBold.otf") format("opentype");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -10,20 +19,53 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Supera Gothic", sans-serif;
+  font-family: "Aeonik", "Linotte", system-ui, sans-serif;
+  font-weight: 400;
 }
 
-/* ---------- Website Palette ---------------- */
+/* Dopamine brand palette. */
 
-/* DynaPuff applies to H2 and H3 headings, including animated text. */
+:root {
+  --orange-vivid: #ff4200;
+  --orange-deep: #f25c05;
+  --orange-bright: #ff6815;
+  --orange-gold: #f28705;
+  --orange-light: #ffba66;
+  --purple-vivid: #8f00ff;
+  --purple-magenta: #b400e8;
+  --purple-bright: #a333ff;
+  --purple-soft: #b158fa;
+  --purple-light: #ce93ff;
+  --blue-navy: #021f59;
+  --blue-deep: #0266ba;
+  --blue-royal: #244bff;
+  --blue-bright: #087bff;
+  --blue-cyan: #00bdf2;
+  --teal: #00dccf;
+  --mint: #00e8c5;
+  --aqua: #00fff0;
+  --aqua-soft: #60f5ef;
+  --aqua-light: #a6fff8;
+  --neutral-dark: #262626;
+  --neutral-white: #ffffff;
+}
+
+
+/* Heading typography, including animated text. */
 h1,
 h1 *,
 h2,
 h2 *,
 h3,
-h3 * {
-  font-family: "DynaPuff", system-ui, sans-serif;
-  font-weight: 400;
+h3 *,
+h4,
+h4 *,
+h5,
+h5 *,
+h6,
+h6 * {
+  font-family: "Linotte", system-ui, sans-serif;
+  font-weight: 600;
   font-style: normal;
 }
 

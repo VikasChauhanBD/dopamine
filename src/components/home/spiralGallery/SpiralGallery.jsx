@@ -648,6 +648,12 @@ const SpiralGallery = () => {
 
   return (
     <section className="spiral-gallery" ref={sectionRef}>
+      <div className="spiral-fluid-background" aria-hidden="true">
+        <span className="spiral-fluid-shape spiral-fluid-left" />
+        <span className="spiral-fluid-shape spiral-fluid-top" />
+        <span className="spiral-fluid-shape spiral-fluid-right" />
+        <span className="spiral-fluid-shape spiral-fluid-bottom" />
+      </div>
       <div className="spiral-webgl-container" ref={containerRef}>
         <canvas className="spiral-webgl-canvas" ref={canvasRef} />
       </div>
