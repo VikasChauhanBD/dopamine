@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./VideoHero.css";
+import logo from "../../../assets/images/logo.png";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -110,7 +111,13 @@ function VideoHero() {
       <div className="hero-content">
         <p className="hero-presenter">VIDYA JEEVAN PRESENTS</p>
 
-        <h1 className="hero-title">DOPAMINE</h1>
+        <h1 className="hero-title">
+          <img
+            className="hero-logo"
+            src="https://cdn.dribbble.com/userupload/49395101/file/575f5fd932fc3771d9489d24dd099482.png"
+            alt="DOPAMINE"
+          />
+        </h1>
 
         <h2 className="hero-sub-title">Get High On Life.</h2>
 

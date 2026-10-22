@@ -12,7 +12,7 @@ function MentorSection() {
     {
       id: 1,
       image:
-        "https://cdn.dribbble.com/userupload/49257897/file/c024d98dee96a225a17137a559671902.jpeg",
+        "https://cdn.dribbble.com/userupload/49395474/file/41b2055ef786a1be39c6ae4d67ed1616.png",
       bgImage:
         "https://cdn.dribbble.com/userupload/49387331/file/f8b41f882f857e3b4835f07aada2bc9b.jpeg",
       title: "Dr. Zainab Vora",
@@ -28,6 +28,8 @@ function MentorSection() {
           Some words become more than words. They become a voice in your head
           when things get difficult, a little courage when you need it most, and
           a reminder of what you’re capable of when you forget.
+          <br />
+          For thousands of BTR students, that voice is Dr. ZV.
         </>
       ),
       fullContent: (
@@ -85,7 +87,7 @@ function MentorSection() {
     {
       id: 2,
       image:
-        "https://cdn.dribbble.com/userupload/49257894/file/42c17dad43b16db8a8699feb77af5c10.jpeg",
+        "https://cdn.dribbble.com/userupload/49395472/file/862c8f3a17c0e1715f0ebd8f0bfa343d.png",
       bgImage:
         "https://cdn.dribbble.com/userupload/49387329/file/f50486ecf62dd71250db413b648fdc3c.jpeg",
       title: "Dr. Ravi Sharma",
@@ -140,7 +142,7 @@ function MentorSection() {
     {
       id: 3,
       image:
-        "https://cdn.dribbble.com/userupload/49257895/file/552c920e376be5a9a98bca4e1b403f2d.jpeg",
+        "https://cdn.dribbble.com/userupload/49395473/file/976de04f57345884a68565b4334a123a.png",
       bgImage:
         "https://cdn.dribbble.com/userupload/49387330/file/0f6144e8f2558bdb0e0ed5db0c5ae82f.jpeg",
       title: "Mr. Ritesh Kapoor",
@@ -192,7 +194,7 @@ function MentorSection() {
     {
       id: 4,
       image:
-        "https://cdn.dribbble.com/userupload/49257896/file/4fa0a75b33442d1ffae2ef626612c231.jpeg",
+        "https://cdn.dribbble.com/userupload/49395471/file/50942e8f7a75321caa2a9c9794b9a8ad.png",
       bgImage:
         "https://cdn.dribbble.com/userupload/49387327/file/55b41e383eec2f67979ae8fbe317fdfd.jpeg",
       title: "Dr. Gobind Rai Garg",
@@ -204,9 +206,8 @@ function MentorSection() {
           <b>“Dum bande mein hota hai, branch mein nahi.”</b>
           <br />
           If you’ve heard Dr. GRG say this, you know the line needs no
-          introduction. For generations of medical students, he has been the
-          name in Pharmacology. Years of teaching, concepts that finally click,
-          and a familiar voice through countless hours of preparation.
+          introduction.For generations of medical students, Dr. GRG has been the
+          name in Pharmacology.
         </>
       ),
       fullContent: (
@@ -248,7 +249,7 @@ function MentorSection() {
     {
       id: 5,
       image:
-        "https://cdn.dribbble.com/userupload/49258317/file/08bfa49831f127304deb84f28026585f.jpeg",
+        "https://cdn.dribbble.com/userupload/49395475/file/312aa1e512fff6cdea45d31d6f68678a.png",
       bgImage:
         "https://cdn.dribbble.com/userupload/49387328/file/ed1eb7465d77381c5e257aac821cd08c.jpeg",
       title: "Dr. Apurv Mehra",
@@ -262,9 +263,7 @@ function MentorSection() {
             hove te tenu o vi mil jae jo tera ho nai sakda.”
           </b>
           <br />A name students have learnt from, a presence they look forward
-          to, and a part of what makes Vidya Jeevan, Vidya Jeevan. Somewhere
-          between having a plan and learning to trust the process, there’s a
-          lesson Dr. Apurv keeps bringing home.
+          to, and a part of what makes Vidya Jeevan, Vidya Jeevan.
         </>
       ),
       fullContent: (
