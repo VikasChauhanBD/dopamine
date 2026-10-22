@@ -1,6 +1,17 @@
 .about-ev {
   padding: 100px 0;
-  background: #f7f7fa;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.2) 0px,
+      rgba(255, 255, 255, 0.04) 2px,
+      rgba(25, 37, 79, 0.13) 4px,
+      rgba(255, 255, 255, 0.08) 7px,
+      transparent 9px
+    ),
+    radial-gradient(ellipse at 5% 95%, #f2e5ef 0%, transparent 45%),
+    radial-gradient(ellipse at 90% 85%, #123f57 0%, transparent 52%),
+    linear-gradient(110deg, #ff785e 5%, #ff9ac6 48%, #aaa5d8 78%, #7288b5);
   color: #021f59;
 }
 
