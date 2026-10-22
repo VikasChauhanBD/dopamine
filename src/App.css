@@ -23,6 +23,11 @@
   font-weight: 400;
 }
 
+p,
+.us-desc {
+  letter-spacing: 0.05em;
+}
+
 /* Dopamine brand palette. */
 
 :root {

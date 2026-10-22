@@ -71,11 +71,14 @@ function ArrowIcon() {
 
 export default function UpcomingShows() {
   const rootRef = useRef(null);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
+
+    if (reduceMotion) videoRef.current?.pause();
 
     const ctx = gsap.context(() => {
       if (!reduceMotion) {
@@ -135,7 +138,19 @@ export default function UpcomingShows() {
 
   return (
     <section className="us-section" ref={rootRef}>
-      <div className="us-background" aria-hidden="true" />
+      <div className="us-background" aria-hidden="true">
+        <video
+          ref={videoRef}
+          className="us-background-video"
+          src="https://cdn.dribbble.com/userupload/49398969/file/large-9034702c5b7eed9fbc81678df107b395.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          tabIndex={-1}
+        />
+      </div>
 
       <div className="us-container">
         <header className="us-header">
