@@ -1,13 +1,63 @@
-
 .ss-section {
   position: relative;
+  isolation: isolate;
   width: 100%;
   height: 100vh;
+  height: 100svh;
   overflow: hidden;
   cursor: none;
   user-select: none;
   -webkit-user-select: none;
-  background: #f4f1ec;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 79, 163, 0.55),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(62, 230, 176, 0.4),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 75% 85%,
+      rgba(255, 210, 63, 0.35),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 20% 85%,
+      rgba(76, 201, 255, 0.4),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #1a0b4d, #4a1a9c, #7a1fa2, #1b2fb3, #1a0b4d);
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    300% 300%;
+  animation: ss-bg-shift 14s ease-in-out infinite;
+}
+
+@keyframes ss-bg-shift {
+  0%,
+  100% {
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      0% 50%;
+  }
+
+  50% {
+    background-position:
+      0 0,
+      0 0,
+      0 0,
+      0 0,
+      100% 50%;
+  }
 }
 
 .ss-canvas {
@@ -16,61 +66,113 @@
   height: 100%;
 }
 
+.ss-confetti {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ss-confetti-piece {
+  position: absolute;
+  top: -5%;
+  border-radius: 2px;
+  opacity: 0.85;
+  animation-name: ss-confetti-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.ss-confetti-piece.ss-round {
+  border-radius: 50%;
+}
+
+@keyframes ss-confetti-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(var(--sway, 30px), 55vh, 0) rotate(360deg);
+  }
+
+  100% {
+    transform: translate3d(calc(var(--sway, 30px) * -1), 115vh, 0)
+      rotate(720deg);
+  }
+}
+
 .ss-reset {
   position: absolute;
   top: 18px;
   left: 18px;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  color: rgba(0, 0, 0, 0.32);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.9);
   font:
-    400 11px "Aeonik", "Linotte", system-ui, sans-serif;
-  padding: 5px 14px;
-  border-radius: 6px;
+    600 11px "Aeonik",
+    "Linotte",
+    system-ui,
+    sans-serif;
+  padding: 6px 14px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
+
 .ss-reset:hover {
-  background: rgba(0, 0, 0, 0.08);
-  color: rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
 }
 
 .ss-panel {
   position: absolute;
   top: 14px;
   right: 14px;
+  z-index: 3;
   width: 200px;
 }
 
 .ss-toggle {
   width: 100%;
   padding: 8px 14px;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  color: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.9);
   font:
-    500 11px "Aeonik", "Linotte", system-ui, sans-serif;
+    600 11px "Aeonik",
+    "Linotte",
+    system-ui,
+    sans-serif;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
   text-align: left;
   letter-spacing: 0.03em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
+
 .ss-toggle:hover {
-  background: rgba(0, 0, 0, 0.08);
-  color: rgba(0, 0, 0, 0.55);
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
 }
+
 .ss-toggle.ss-active {
   border-radius: 8px 8px 0 0;
   border-bottom-color: transparent;
 }
 
 .ss-controls {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-top: none;
   border-radius: 0 0 8px 8px;
   max-height: 0;
@@ -82,6 +184,7 @@
     padding 0.3s ease;
   padding: 0 16px;
 }
+
 .ss-controls.ss-open {
   max-height: 320px;
   opacity: 1;
@@ -94,14 +197,18 @@
   gap: 5px;
   margin-bottom: 14px;
 }
+
 .ss-label:last-child {
   margin-bottom: 0;
 }
 
 .ss-label-text {
   font:
-    400 10px "Aeonik", "Linotte", system-ui, sans-serif;
-  color: rgba(0, 0, 0, 0.35);
+    600 10px "Aeonik",
+    "Linotte",
+    system-ui,
+    sans-serif;
+  color: rgba(43, 10, 94, 0.65);
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -111,79 +218,130 @@
   appearance: none;
   width: 100%;
   height: 4px;
-  background: rgba(0, 0, 0, 0.07);
+  background: rgba(43, 10, 94, 0.15);
   border-radius: 2px;
   outline: none;
   cursor: pointer;
 }
+
 .ss-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #fff;
-  border: 1.5px solid rgba(0, 0, 0, 0.18);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  background: #ff4fa3;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(43, 10, 94, 0.3);
   transition:
-    border-color 0.15s,
+    transform 0.15s,
     box-shadow 0.15s;
 }
+
 .ss-range::-webkit-slider-thumb:hover {
-  border-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+  transform: scale(1.15);
+  box-shadow: 0 1px 6px rgba(43, 10, 94, 0.4);
 }
+
 .ss-range::-moz-range-thumb {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #fff;
-  border: 1.5px solid rgba(0, 0, 0, 0.18);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  background: #ff4fa3;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(43, 10, 94, 0.3);
 }
+
 .ss-range::-moz-range-track {
   height: 4px;
-  background: rgba(0, 0, 0, 0.07);
+  background: rgba(43, 10, 94, 0.15);
   border-radius: 2px;
   border: none;
 }
 
 .ss-name-box {
   position: absolute;
-  bottom: 40px;
+  top: 14px;
   left: 50%;
   transform: translateX(-50%);
-  width: 260px;
+  z-index: 2;
+  width: 280px;
   max-width: calc(100% - 32px);
+  padding: 2px;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    #ff4fa3,
+    #ffd23f,
+    #3ee6b0,
+    #4cc9ff,
+    #c77dff
+  );
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
   cursor: default;
+  transition: box-shadow 0.2s;
+}
+
+.ss-name-box:focus-within {
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.35),
+    0 6px 28px rgba(255, 79, 163, 0.5);
 }
 
 .ss-name-input {
+  display: block;
   width: 100%;
   box-sizing: border-box;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  color: rgba(0, 0, 0, 0.7);
+  padding: 11px 14px;
+  background: rgba(255, 255, 255, 0.97);
+  border: none;
+  border-radius: 10px;
+  color: #2b0a5e;
   font:
-    400 13px "Aeonik", "Linotte", system-ui, sans-serif;
+    600 14px "Aeonik",
+    "Linotte",
+    system-ui,
+    sans-serif;
   letter-spacing: 0.03em;
   text-align: center;
   outline: none;
   cursor: text;
   user-select: text;
   -webkit-user-select: text;
-  transition:
-    border-color 0.2s,
-    box-shadow 0.2s;
 }
+
 .ss-name-input::placeholder {
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(43, 10, 94, 0.45);
+  font-weight: 500;
 }
-.ss-name-input:focus {
-  border-color: rgba(0, 0, 0, 0.25);
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+
+/* ------------------------------------- Responsive ----------------------------------------- */
+
+@media (max-width: 760px) {
+  .ss-name-box {
+    top: 12px;
+    width: calc(100% - 24px);
+    max-width: 420px;
+  }
+
+  .ss-reset {
+    top: 66px;
+    left: 12px;
+  }
+
+  .ss-panel {
+    top: 62px;
+    right: 12px;
+    width: 170px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-section {
+    animation: none;
+  }
+
+  .ss-confetti-piece {
+    animation: none;
+  }
 }

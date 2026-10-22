@@ -13,6 +13,25 @@ const COLS_L = [
 const IGNORE_SELECTOR = ".ss-panel, .ss-reset, .ss-name-box";
 const DEFAULT_NAME = "Your Name";
 
+// Party confetti (purely decorative, deterministic so it never reshuffles)
+const CONFETTI_COLORS = [
+  "#ff4fa3",
+  "#ffd23f",
+  "#3ee6b0",
+  "#4cc9ff",
+  "#ff8a4c",
+  "#c77dff",
+];
+const CONFETTI = Array.from({ length: 30 }, (_, i) => ({
+  left: (i * 37 + 11) % 100,
+  size: 6 + ((i * 5) % 8),
+  dur: 9 + ((i * 3) % 8),
+  delay: -((i * 1.7) % 12),
+  sway: (i % 2 ? 1 : -1) * (20 + ((i * 11) % 60)),
+  color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+  round: i % 3 !== 0,
+}));
+
 function roundRect(ctx, x, y, w, h, r) {
   ctx.beginPath();
   ctx.moveTo(x + r, y);
@@ -85,9 +104,19 @@ export default function SillyString() {
       lx.font = fontFor(fs);
       const tw = lx.measureText(text).width;
 
+      // Party-style name: white fill, deep purple outline, soft shadow
+      const outline = Math.max(4, fs * 0.05);
       lx.textAlign = "center";
       lx.textBaseline = "middle";
-      lx.fillStyle = "#000";
+      lx.lineJoin = "round";
+      lx.lineWidth = outline;
+      lx.strokeStyle = "#2b0a5e";
+      lx.shadowColor = "rgba(0, 0, 0, 0.35)";
+      lx.shadowBlur = 14;
+      lx.shadowOffsetY = 6;
+      lx.strokeText(text, W / 2, H / 2);
+      lx.shadowColor = "transparent";
+      lx.fillStyle = "#ffffff";
       lx.fillText(text, W / 2, H / 2);
 
       const cc = document.createElement("canvas");
@@ -99,7 +128,7 @@ export default function SillyString() {
       cx.textBaseline = "middle";
       cx.fillStyle = "#000";
       cx.strokeStyle = "#000";
-      cx.lineWidth = 2;
+      cx.lineWidth = outline;
       cx.lineJoin = "round";
       cx.fillText(text, W / 2, H / 2);
       cx.strokeText(text, W / 2, H / 2);
@@ -365,8 +394,8 @@ export default function SillyString() {
       ctx.translate(cx, cy);
       ctx.rotate(a);
       ctx.save();
-      ctx.shadowColor = "rgba(0,0,0,0.08)";
-      ctx.shadowBlur = 8;
+      ctx.shadowColor = "rgba(0,0,0,0.25)";
+      ctx.shadowBlur = 10;
       ctx.shadowOffsetY = 3;
       const bg = ctx.createLinearGradient(-CW / 2, 0, CW / 2, 0);
       bg.addColorStop(0, "#9a2020");
@@ -522,9 +551,8 @@ export default function SillyString() {
       if (!alive) return;
       const canX = mx,
         canY = my;
+      // Canvas stays transparent so the colorful CSS background shows through
       X.clearRect(0, 0, W, H);
-      X.fillStyle = "#f4f1ec";
-      X.fillRect(0, 0, W, H);
       if (spraying) emitFrom(canX, canY);
       for (const s of strands) {
         for (const p of s.pts) p.update();
@@ -559,6 +587,24 @@ export default function SillyString() {
 
   return (
     <section className="ss-section" ref={sectionRef}>
+      <div className="ss-confetti" aria-hidden="true">
+        {CONFETTI.map((c, i) => (
+          <span
+            key={i}
+            className={"ss-confetti-piece" + (c.round ? " ss-round" : "")}
+            style={{
+              left: c.left + "%",
+              width: c.size,
+              height: c.round ? c.size : c.size * 1.8,
+              background: c.color,
+              animationDuration: c.dur + "s",
+              animationDelay: c.delay + "s",
+              "--sway": c.sway + "px",
+            }}
+          />
+        ))}
+      </div>
+
       <canvas className="ss-canvas" ref={canvasRef} />
 
       <button
@@ -575,7 +621,7 @@ export default function SillyString() {
           type="text"
           value={name}
           maxLength={20}
-          placeholder="Enter your name"
+          placeholder="🎉 Enter your name"
           onChange={(e) => setName(e.target.value)}
         />
       </div>
