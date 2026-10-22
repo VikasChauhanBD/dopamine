@@ -142,7 +142,7 @@ export default function UpcomingShows() {
         <video
           ref={videoRef}
           className="us-background-video"
-          src="https://cdn.dribbble.com/userupload/49398969/file/large-9034702c5b7eed9fbc81678df107b395.mp4"
+          src="https://cdn.dribbble.com/userupload/49399706/file/large-e810dbe72868b4773f67206e1aa0d0a6.mp4"
           autoPlay
           muted
           loop
