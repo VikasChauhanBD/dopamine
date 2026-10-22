@@ -16,6 +16,8 @@
 /* ---------- Website Palette ---------------- */
 
 /* DynaPuff applies to H2 and H3 headings, including animated text. */
+h1,
+h1 *,
 h2,
 h2 *,
 h3,

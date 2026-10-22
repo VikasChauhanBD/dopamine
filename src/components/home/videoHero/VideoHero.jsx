@@ -109,19 +109,18 @@ function VideoHero() {
       </div>
 
       <div className="hero-content">
-        <p className="hero-presenter">VIDYA JEEVAN PRESENTS</p>
+        <h1 className="hero-presenter">VIDYA JEEVAN PRESENTS</h1>
 
-        <h1 className="hero-title">
+        <div className="hero-banner">
           <img
             className="hero-logo"
-            src="https://cdn.dribbble.com/userupload/49395101/file/575f5fd932fc3771d9489d24dd099482.png"
+            src="https://cdn.dribbble.com/userupload/49396115/file/56cd5cb7eb96d551918070cb40bfc673.png"
             alt="DOPAMINE"
+            fetchPriority="high"
           />
-        </h1>
+        </div>
 
-        <h2 className="hero-sub-title">Get High On Life.</h2>
-
-        <p className="hero-date">14 NOVEMBER 2026</p>
+        <h4 className="hero-date">14 NOVEMBER 2026</h4>
 
         <p className="hero-tag">Your people. Your music. Your moment.</p>
 
