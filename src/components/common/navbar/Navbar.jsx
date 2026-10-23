@@ -57,16 +57,12 @@ function Navbar() {
             </NavLink>
           ))}
 
-          <NavLink
-            className="navbar-contact-mobile"
-            to="/registration"
-            onClick={closeMenu}
-          >
+          <NavLink className="navbar-contact-mobile" to="#" onClick={closeMenu}>
             Register Now <FiArrowUpRight />
           </NavLink>
         </nav>
 
-        <NavLink className="navbar-contact" to="/registration">
+        <NavLink className="navbar-contact" to="#">
           Register Now <FiArrowUpRight />
         </NavLink>
       </div>

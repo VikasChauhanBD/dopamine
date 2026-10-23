@@ -4,17 +4,17 @@ import {
   FaInstagram,
   FaXTwitter,
   FaYoutube,
+  FaArrowUpRightFromSquare,
 } from "react-icons/fa6";
-import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import "./Footer.css";
 import logo from "../../../assets/images/logo.png";
 
 const Footer = () => {
   const navLinks = [
-    { name: "Home", href: "/", active: true },
+    { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Contact Us", href: "/contact" },
-    { name: "Registration", href: "/registration" },
+    // { name: "Registration", href: "/registration" },
   ];
 
   const socialLinks = [
@@ -45,23 +45,20 @@ const Footer = () => {
       <div className="festival-footer-container">
         <div className="festival-footer-brand">
           <a href="/" className="festival-footer-logo">
-            <img src={logo} alt="" />
+            <img src={logo} alt="Dopamine Logo" />
           </a>
         </div>
 
         <div className="festival-footer-navigation">
           <nav className="festival-footer-links" aria-label="Footer navigation">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className={link.active ? "active" : ""}
-              >
+              <a key={link.name} href={link.href}>
                 {link.name}
               </a>
             ))}
           </nav>
 
+          {/* Social links
           <div className="festival-footer-socials">
             {socialLinks.map((social) => (
               <a
@@ -76,7 +73,9 @@ const Footer = () => {
               </a>
             ))}
           </div>
+          */}
         </div>
+
         <div className="festival-footer-bottom">
           <p>Dopamine © {new Date().getFullYear()}. All Rights Reserved.</p>
 
@@ -86,7 +85,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="festival-footer-credit"
           >
-            | Designed & Managed By: Believers Destination Pvt Ltd
+            | Designed &amp; Managed By: Believers Destination Pvt Ltd
             <FaArrowUpRightFromSquare />
           </a>
         </div>

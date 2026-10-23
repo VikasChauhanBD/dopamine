@@ -68,13 +68,11 @@
   transition: width 0.3s ease;
 }
 
-.festival-footer-links a:hover,
-.festival-footer-links a.active {
+.festival-footer-links a:hover {
   color: #ffffff;
 }
 
-.festival-footer-links a:hover::after,
-.festival-footer-links a.active::after {
+.festival-footer-links a:hover::after {
   width: 100%;
 }
 
@@ -150,7 +148,7 @@
   transform: translate(0, 0);
 }
 
-/* ------------------------------ Responsive --------------------------------- */
+/* Responsive */
 
 @media (max-width: 900px) {
   .festival-footer-container {

@@ -130,7 +130,7 @@ function VideoHero() {
           stars of the day.
         </p>
 
-        <a href="#event-details" className="hero-cta">
+        <a href="#" className="hero-cta">
           LET'S GET INTO IT <span aria-hidden="true">↗</span>
         </a>
       </div>

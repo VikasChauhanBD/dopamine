@@ -5,8 +5,6 @@ import "./UpcomingShows.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CTA_LINK = "#"; // <- put the "Get To Know Dopamine" page link here
-
 const SHOWS = [
   {
     id: 1,
@@ -14,7 +12,6 @@ const SHOWS = [
     name: "THE RANKERS' SPOTLIGHT",
     description:
       "A celebration of milestones, hard work, and the people behind the ranks.",
-    link: "#",
   },
   {
     id: 2,
@@ -22,7 +19,6 @@ const SHOWS = [
     name: "THE FOOD LINEUP",
     description:
       "From Purani Dilli chaat to global flavours, fast-food favourites, and lunch and dinner buffets. Come hungry.",
-    link: "#",
   },
   {
     id: 3,
@@ -30,7 +26,6 @@ const SHOWS = [
     name: "PLAY MODE: ON",
     description:
       "Games, activities, and a chance to give your brain a break from being a medical student.",
-    link: "#",
   },
   {
     id: 4,
@@ -38,7 +33,6 @@ const SHOWS = [
     name: "THE DANCE FLOOR CALLS",
     description:
       "The DJ's on, your favourite tracks are playing, and the rest is up to you.",
-    link: "#",
   },
   {
     id: 5,
@@ -46,7 +40,6 @@ const SHOWS = [
     name: "THE FLOOR IS YOURS",
     description:
       "Dr. Zainab, Dr. Ravi, Dr. GRG and Dr. Apurv come together on one stage, with students invited to sing, dance, perform, or surprise us with something entirely their own.",
-    link: "#",
   },
 ];
 
@@ -170,7 +163,7 @@ export default function UpcomingShows() {
         <ul className="us-list">
           {SHOWS.map((show) => (
             <li className="us-item" key={show.id}>
-              <a className="us-row" href={show.link}>
+              <div className="us-row">
                 <span className="us-fill" />
                 <span className="us-row-mask">
                   <span className="us-row-inner">
@@ -187,13 +180,13 @@ export default function UpcomingShows() {
                   </span>
                 </span>
                 <span className="us-row-line" />
-              </a>
+              </div>
             </li>
           ))}
         </ul>
 
         <div className="us-cta">
-          <a className="us-cta-link" href={CTA_LINK}>
+          <a className="us-cta-link" href="#">
             Get To Know Dopamine →
           </a>
         </div>
