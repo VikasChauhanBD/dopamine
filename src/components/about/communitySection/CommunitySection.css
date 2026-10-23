@@ -135,8 +135,8 @@
   padding: 28px;
   border: 0;
   border-radius: 24px;
-  background: #021f59;
-  color: #ffffff;
+  background: transparent;
+  color: inherit;
 }
 
 .community-section__card:nth-child(even) {
@@ -159,10 +159,6 @@
   padding: 10px;
   border-radius: 20px;
   background: rgba(3, 90, 166, 0.06);
-}
-
-.community-section__card:last-child .community-section__visual {
-  background: rgba(255, 255, 255, 0.08);
 }
 
 .community-section__platform-image {
@@ -231,7 +227,7 @@
 }
 
 .community-section__card:last-child .community-section__subtitle {
-  color: #ffffff;
+  color: #035aa6;
 }
 
 .community-section__story {

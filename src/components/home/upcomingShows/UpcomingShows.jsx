@@ -37,7 +37,7 @@ const SHOWS = [
   {
     id: 5,
     num: "5",
-    name: "THE FLOOR IS YOURS",
+    name: "THE STAGE IS YOURS",
     description:
       "Dr. Zainab, Dr. Ravi, Dr. GRG and Dr. Apurv come together on one stage, with students invited to sing, dance, perform, or surprise us with something entirely their own.",
   },

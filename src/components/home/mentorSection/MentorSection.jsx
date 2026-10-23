@@ -18,7 +18,11 @@ function MentorSection() {
       title: "Dr. Zainab Vora",
       description: (
         <>
-          <b>Founder of CoreBTR</b>
+          <b>Radiologist</b>
+          <br />
+          <b>Founder - CoreBTR &amp; Conceptual Radiology</b>
+          <br />
+          <b>Co-Founder - Vidya Jeevan Experience Centre</b>
           <br />
           <b>The Mother of BTR</b>
           <br />
@@ -34,7 +38,11 @@ function MentorSection() {
       ),
       fullContent: (
         <>
-          <b>Founder of CoreBTR</b>
+          <b>Radiologist</b>
+          <br />
+          <b>Founder - CoreBTR &amp; Conceptual Radiology</b>
+          <br />
+          <b>Co-Founder - Vidya Jeevan Experience Centre</b>
           <br />
           <b>The Mother of BTR</b>
           <br />
@@ -93,7 +101,9 @@ function MentorSection() {
       title: "Dr. Ravi Sharma",
       description: (
         <>
-          <b>Founder of CoreBTR</b>
+          <b>Neurosurgeon</b>
+          <br />
+          <b>Co-Founder - CoreBTR &amp; Vidya Jeevan Experience Centre</b>
           <br />
           <br />
           <b>“Tu kar, main hoon tere saath.”</b>
@@ -109,7 +119,9 @@ function MentorSection() {
       ),
       fullContent: (
         <>
-          <b>Founder of CoreBTR</b>
+          <b>Neurosurgeon</b>
+          <br />
+          <b>Co-Founder - CoreBTR &amp; Vidya Jeevan Experience Centre</b>
           <br />
           <br />
           <b>“Tu kar, main hoon tere saath.”</b>
@@ -148,7 +160,9 @@ function MentorSection() {
       title: "Mr. Ritesh Kapoor",
       description: (
         <>
-          <b>Financial & Strategic Consultant | CA</b>
+          <b>Financial &amp; Strategic Consultant | CA</b>
+          <br />
+          <b>Director - Vidya Jeevan Experience Centre</b>
           <br />
           <br />
           <b>Our very own Mama Ji Sir.</b>
@@ -161,7 +175,9 @@ function MentorSection() {
       ),
       fullContent: (
         <>
-          <b>Financial & Strategic Consultant | CA</b>
+          <b>Financial &amp; Strategic Consultant | CA</b>
+          <br />
+          <b>Director - Vidya Jeevan Experience Centre</b>
           <br />
           <br />
           <b>Our very own Mama Ji Sir.</b>
@@ -191,8 +207,72 @@ function MentorSection() {
         </>
       ),
     },
+
     {
       id: 4,
+      image:
+        "https://cdn.dribbble.com/userupload/49406609/file/a4e623af3088dc2b25e8a7c02b9b15a9.png",
+      bgImage:
+        "https://cdn.dribbble.com/userupload/49406608/file/471aa3f9b76abb04b5052408bc97eb80.jpeg",
+      title: "Dr. Apurv Mehra",
+      description: (
+        <>
+          <b>Orthopedic Surgeon</b>
+          <br />
+          <b>Founder - E-Conceptual &amp; Vidya Jeevan Experience Centre</b>
+          <br />
+          <b>Co-Founder - CoreBTR</b>
+          <br />
+          <br />
+          <b>
+            “Teri kismat da likhya tere to koi kho nai sakda, te je us di meher
+            hove te tenu o vi mil jae jo tera ho nai sakda.”
+          </b>
+          <br />A name students have learnt from, a presence they look forward
+          to, and a part of what makes Vidya Jeevan, Vidya Jeevan.
+        </>
+      ),
+      fullContent: (
+        <>
+          <b>Orthopedic Surgeon</b>
+          <br />
+          <b>Founder - E-Conceptual &amp; Vidya Jeevan Experience Centre</b>
+          <br />
+          <b>Co-Founder - CoreBTR</b>
+          <br />
+          <br />
+          <b>
+            “Teri kismat da likhya tere to koi kho nai sakda, te je us di meher
+            hove te tenu o vi mil jae jo tera ho nai sakda.”
+          </b>
+          <br />A name students have learnt from, a presence they look forward
+          to, and a part of what makes Vidya Jeevan, Vidya Jeevan.
+          <br />
+          <br />
+          Somewhere between having a plan and learning to trust the process,
+          there’s a lesson Dr. Apurv keeps bringing home.
+          <br />
+          <br />
+          The discipline to keep showing up. The strength to hold your ground
+          when things get difficult. And the faith to keep doing your part, even
+          when the outcome is still unwritten.
+          <br />
+          <br />
+          At Vidya Jeevan, that belief extends beyond the exam hall. It’s in the
+          bigger picture, in the possibilities students are encouraged to see
+          for themselves, and in the reminder that there’s more to becoming a
+          doctor than the rank you earn.
+          <br />
+          <br />
+          <b>
+            Do your bit. Trust the timing. And leave room for life to surprise
+            you.
+          </b>
+        </>
+      ),
+    },
+    {
+      id: 5,
       image:
         "https://cdn.dribbble.com/userupload/49395471/file/50942e8f7a75321caa2a9c9794b9a8ad.png",
       bgImage:
@@ -242,61 +322,6 @@ function MentorSection() {
             From shaping how generations learn Pharmacology to inspiring the
             doctors they’re becoming, Dr. GRG’s impact reaches far beyond the
             classroom.
-          </b>
-        </>
-      ),
-    },
-    {
-      id: 5,
-      image:
-        "https://cdn.dribbble.com/userupload/49395475/file/312aa1e512fff6cdea45d31d6f68678a.png",
-      bgImage:
-        "https://cdn.dribbble.com/userupload/49387328/file/ed1eb7465d77381c5e257aac821cd08c.jpeg",
-      title: "Dr. Apurv Mehra",
-      description: (
-        <>
-          <b>Founder of E-Conceptual, CoreBTR, Vidya Jeevan</b>
-          <br />
-          <br />
-          <b>
-            “Teri kismat da likhya tere to koi kho nai sakda, te je us di meher
-            hove te tenu o vi mil jae jo tera ho nai sakda.”
-          </b>
-          <br />A name students have learnt from, a presence they look forward
-          to, and a part of what makes Vidya Jeevan, Vidya Jeevan.
-        </>
-      ),
-      fullContent: (
-        <>
-          <b>Founder of E-Conceptual, CoreBTR, Vidya Jeevan</b>
-          <br />
-          <br />
-          <b>
-            “Teri kismat da likhya tere to koi kho nai sakda, te je us di meher
-            hove te tenu o vi mil jae jo tera ho nai sakda.”
-          </b>
-          <br />A name students have learnt from, a presence they look forward
-          to, and a part of what makes Vidya Jeevan, Vidya Jeevan.
-          <br />
-          <br />
-          Somewhere between having a plan and learning to trust the process,
-          there’s a lesson Dr. Apurv keeps bringing home.
-          <br />
-          <br />
-          The discipline to keep showing up. The strength to hold your ground
-          when things get difficult. And the faith to keep doing your part, even
-          when the outcome is still unwritten.
-          <br />
-          <br />
-          At Vidya Jeevan, that belief extends beyond the exam hall. It’s in the
-          bigger picture, in the possibilities students are encouraged to see
-          for themselves, and in the reminder that there’s more to becoming a
-          doctor than the rank you earn.
-          <br />
-          <br />
-          <b>
-            Do your bit. Trust the timing. And leave room for life to surprise
-            you.
           </b>
         </>
       ),

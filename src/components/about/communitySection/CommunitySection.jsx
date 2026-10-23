@@ -11,6 +11,21 @@ import grgLogo from "../../../assets/images/grg-w.png";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const platforms = [
+   {
+    name: "VIDYA JEEVAN",
+    // Demo URL: replace with your Vidya Jeevan image URL.
+    image:
+      "https://cdn.dribbble.com/userupload/49348522/file/bd856b87c15848514e8bbffd9b4d94eb.webp",
+    imageType: "photo",
+    subtitle:
+      "More than a place. More than a community. A small chapter in thousands of journeys.",
+    paragraphs: [
+      "Vidya Jeevan is where ambition meets belonging. Where early mornings, long study hours, everyday routines, and the pursuit of a dream become part of something bigger.",
+      "It's where the academics keep you busy, the people keep you going, and the memories stay long after the exams.",
+      "Through it all, there's a team that puts its heart into making this place what it is. Every student who walks through these doors, every person who works behind the scenes, and every life touched along the way becomes part of something bigger than themselves.",
+    ],
+    closing: "This is Vidya Jeevan. And this is a story we build together.",
+  },
   {
     name: "CoreBTR",
     image: corebtrLogo,
@@ -41,21 +56,7 @@ const platforms = [
       "From detailed classes and quick revisions to express learning, question banks and tests, the platform brings together everything students need to build a stronger grasp of the subject, with Dr. GRG's teaching at its heart.",
     ],
   },
-  {
-    name: "VIDYA JEEVAN",
-    // Demo URL: replace with your Vidya Jeevan image URL.
-    image:
-      "https://cdn.dribbble.com/userupload/49348522/file/bd856b87c15848514e8bbffd9b4d94eb.webp",
-    imageType: "photo",
-    subtitle:
-      "More than a place. More than a community. A small chapter in thousands of journeys.",
-    paragraphs: [
-      "Vidya Jeevan is where ambition meets belonging. Where early mornings, long study hours, everyday routines, and the pursuit of a dream become part of something bigger.",
-      "It's where the academics keep you busy, the people keep you going, and the memories stay long after the exams.",
-      "Through it all, there's a team that puts its heart into making this place what it is. Every student who walks through these doors, every person who works behind the scenes, and every life touched along the way becomes part of something bigger than themselves.",
-    ],
-    closing: "This is Vidya Jeevan. And this is a story we build together.",
-  },
+
 ];
 
 function CommunitySection() {
@@ -187,7 +188,7 @@ function CommunitySection() {
         <div className="community-section__platforms">
           {platforms.map((platform, index) => (
             <article
-              className="community-section__card"
+              className={`community-section__card${platform.imageType === "photo" ? " community-section__card--featured" : ""}`}
               key={platform.name}
               id={`community-platform-${index}`}
               aria-labelledby={`community-title-${index}`}
@@ -201,7 +202,7 @@ function CommunitySection() {
                   alt={
                     platform.imageType === "logo"
                       ? `${platform.name} logo`
-                      : "Vidya Jeevan image placeholder"
+                      : "Vidya Jeevan Experience Centre building"
                   }
                   loading="lazy"
                 />
