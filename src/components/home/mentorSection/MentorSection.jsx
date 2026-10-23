@@ -24,8 +24,6 @@ function MentorSection() {
           <br />
           <b>Co-Founder - Vidya Jeevan Experience Centre</b>
           <br />
-          <b>The Mother of BTR</b>
-          <br />
           <br />
           <b>“Kahani tumhaari hai. Ho sake toh kamaal likhna.”</b>
           <br />
@@ -43,8 +41,6 @@ function MentorSection() {
           <b>Founder - CoreBTR &amp; Conceptual Radiology</b>
           <br />
           <b>Co-Founder - Vidya Jeevan Experience Centre</b>
-          <br />
-          <b>The Mother of BTR</b>
           <br />
           <br />
           <b>“Kahani tumhaari hai. Ho sake toh kamaal likhna.”</b>
@@ -95,9 +91,9 @@ function MentorSection() {
     {
       id: 2,
       image:
-        "https://cdn.dribbble.com/userupload/49395472/file/862c8f3a17c0e1715f0ebd8f0bfa343d.png",
+        "https://cdn.dribbble.com/userupload/49409279/file/c0f58705fa646c6db3ddb9b3bef033ec.png",
       bgImage:
-        "https://cdn.dribbble.com/userupload/49387329/file/f50486ecf62dd71250db413b648fdc3c.jpeg",
+        "https://cdn.dribbble.com/userupload/49409174/file/3cd77632077842557aa4bc234e037b6b.jpeg",
       title: "Dr. Ravi Sharma",
       description: (
         <>
