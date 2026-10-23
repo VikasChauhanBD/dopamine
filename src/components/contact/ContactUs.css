@@ -1,30 +1,36 @@
 .help-center {
   position: relative;
+  min-height: 100vh;
   min-height: 100dvh;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 40px 30px;
   overflow: hidden;
+  isolation: isolate;
+  /* background-color: #021f59; */
+  font-family: "Aeonik", "Linotte", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
-.help-center::before {
-  content: "DOPAMINE";
-  white-space: pre;
+.help-center-video {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 18rem;
-  font-weight: 900;
-  line-height: 1.05;
-  color: #021f59;
-  opacity: 0.09;
-  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
   pointer-events: none;
-  user-select: none;
+}
+
+.help-center-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 35, 87, 0.48);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .help-card {
@@ -32,41 +38,55 @@
   z-index: 1;
   width: 100%;
   max-width: 1200px;
-  backdrop-filter: blur(12px);
-
-  background: transparent;
-  border-radius: 18px;
   padding: 60px 40px;
-  box-shadow: 0 15px 45px rgba(2, 31, 89, 0.15);
   text-align: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(2, 31, 89, 0.2);
 }
 
 .help-card h1 {
   font-size: 38px;
-  color: #021f59;
-  margin-bottom: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 40px;
 }
 
 .contact-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   margin-top: 40px;
 }
 
 .contact-card {
-  background: #fff;
-  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
   padding: 34px 24px;
   text-align: center;
   text-decoration: none;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 14px;
   box-shadow: 0 4px 20px rgba(2, 31, 89, 0.12);
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .contact-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 45px rgba(3, 90, 166, 0.2);
+  box-shadow: 0 20px 45px rgba(2, 31, 89, 0.25);
+}
+
+.contact-card:focus-visible {
+  outline: 3px solid #f28705;
+  outline-offset: 4px;
 }
 
 .call-card {
@@ -84,7 +104,7 @@
 .contact-icon {
   width: 56px;
   height: 56px;
-  margin: auto;
+  margin: 0 auto;
   border-radius: 50%;
   background: rgba(3, 90, 166, 0.1);
   display: flex;
@@ -92,6 +112,7 @@
   justify-content: center;
   color: #035aa6;
   font-size: 24px;
+  flex-shrink: 0;
 }
 
 .whatsapp-card .contact-icon {
@@ -102,10 +123,6 @@
 .email-card .contact-icon {
   background: rgba(242, 92, 5, 0.12);
   color: #f25c05;
-}
-
-.contact-icon .material-symbols-outlined {
-  font-size: 28px;
 }
 
 .contact-label {
@@ -122,76 +139,95 @@
   font-size: 20px;
   font-weight: 700;
   color: #035aa6;
-  margin-bottom: 0 0 10px;
-}
-
-.contact-card p {
-  font-size: 15px;
-  color: #021f59;
   margin: 0;
-  line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
-.contact-item a:hover {
+.contact-card:hover h3 {
   color: #f25c05;
 }
 
 /* ---------------------------- Responsive Style ------------------------ */
 
 @media (max-width: 900px) {
+  .help-center {
+    padding: 35px 24px;
+  }
+
+  .help-card {
+    padding: 45px 28px;
+  }
+
   .help-card h1 {
     font-size: 32px;
+    margin-bottom: 30px;
   }
 
   .contact-row {
     grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
   }
 
   .contact-card {
     padding: 28px 20px;
   }
-
-  .contact-item {
-    min-width: 220px;
-  }
-
-  .contact-title {
-    font-size: 18px;
-  }
-
-  .contact-item a {
-    font-size: 18px;
-  }
 }
 
 @media (max-width: 500px) {
   .help-center {
-    padding: 20px;
+    padding: 24px 16px;
+  }
+
+  .help-center-video {
+    object-position: center;
+  }
+
+  .help-center-overlay {
+    background: rgba(2, 31, 89, 0.58);
   }
 
   .help-card {
-    padding: 30px 20px;
+    padding: 30px 16px;
+    border-radius: 14px;
   }
 
   .help-card h1 {
     font-size: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
   }
 
   .contact-row {
-    flex-direction: column;
-    gap: 25px;
+    gap: 18px;
+    margin-top: 25px;
   }
 
-  .contact-item {
-    width: 100%;
+  .contact-card {
+    padding: 25px 16px;
   }
 
-  .contact-title {
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .contact-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .contact-card h3 {
     font-size: 17px;
   }
+}
 
-  .contact-item a {
-    font-size: 17px;
+@media (prefers-reduced-motion: reduce) {
+  .contact-card {
+    transition: none;
+  }
+
+  .contact-card:hover {
+    transform: none;
   }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./ContactUs.css";
 import { BsTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
@@ -7,8 +7,29 @@ import { FaWhatsapp } from "react-icons/fa";
 function ContactUs() {
   return (
     <div className="help-center">
+      {/* Background Video */}
+      <video
+        className="help-center-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+      >
+        <source
+          src="https://cdn.dribbble.com/userupload/49404809/file/large-b3cb24cb3121eacf1331f8ed605acd7e.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support HTML5 video.
+      </video>
+
+      {/* Video Overlay */}
+      <div className="help-center-overlay"></div>
+
+      {/* Contact Content */}
       <div className="help-card">
-        <h1>Contact US</h1>
+        <h1>Contact Us</h1>
 
         <div className="contact-row">
           <a className="contact-card call-card" href="tel:+919876543210">
