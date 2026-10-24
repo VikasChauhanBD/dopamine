@@ -77,7 +77,10 @@ const Footer = () => {
         </div>
 
         <div className="festival-footer-bottom">
-          <p>Dopamine © {new Date().getFullYear()}. All Rights Reserved.</p>
+          <p>
+            Dopamine high on life © {new Date().getFullYear()}. All Rights
+            Reserved.
+          </p>
 
           <a
             href="https://believersdestination.com/"
